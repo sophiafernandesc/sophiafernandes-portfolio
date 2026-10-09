@@ -25,8 +25,7 @@
     "projetos": "Projects",
     "projetos_sub": "Selection",
     "ver_todos": "See all {{count}} projects",
-    "lanyard_reservado": "3D lanyard with physics - drag to swing",
-    "lanyard_legenda": "Interactive piece. Arrives in Sprint 03."
+    "cracha_legenda": "Static badge. The 3D version, hanging from the lanyard with physics, arrives in Sprint 03."
   },
   "sobre": {
     "titulo": "About me",
@@ -44,7 +43,8 @@
     "ver_projeto": "View project",
     "repositorio": "GitHub",
     "capa_alt": "Screenshot of the {{titulo}} project",
-    "vazio": "No projects match this filter."
+    "vazio": "No projects match this filter.",
+    "capa_reservada": "project photo or GIF"
   },
   "experiencias": {
     "titulo": "Experience",

@@ -25,8 +25,7 @@
     "projetos": "Projetos",
     "projetos_sub": "Seleção",
     "ver_todos": "Ver todos os {{count}} projetos",
-    "lanyard_reservado": "crachá 3D com física - arraste para balançar",
-    "lanyard_legenda": "Peça interativa. Entra na Sprint 03."
+    "cracha_legenda": "Crachá estático. A versão 3D, pendurada no cordão e com física, entra na Sprint 03."
   },
   "sobre": {
     "titulo": "Sobre mim",
@@ -44,7 +43,8 @@
     "ver_projeto": "Ver projeto",
     "repositorio": "GitHub",
     "capa_alt": "Captura do projeto {{titulo}}",
-    "vazio": "Nenhum projeto com esse filtro."
+    "vazio": "Nenhum projeto com esse filtro.",
+    "capa_reservada": "foto ou GIF do projeto"
   },
   "experiencias": {
     "titulo": "Experiências",

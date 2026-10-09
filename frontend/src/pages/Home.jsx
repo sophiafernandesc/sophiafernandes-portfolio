@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FiFileText, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
 import CardProjeto from '../components/CardProjeto';
+import Cracha from '../components/Cracha';
 import SecaoVazia from '../components/SecaoVazia';
 import useIdioma from '../hooks/useIdioma';
 import { getProjetos } from '../conteudo/projetos';
@@ -18,7 +19,7 @@ export default function Home() {
     <>
       <section className={estilos.hero}>
         <div className={estilos.coluna}>
-          <SecaoVazia altura={400}>{t('home.foto_alt')}</SecaoVazia>
+          <Cracha />
           <ol className={estilos.indice}>
             <li><a href="#wakatime"><span aria-hidden="true">01 - </span>{t('home.wakatime')}</a></li>
             <li><a href="#projetos"><span aria-hidden="true">02 - </span>{t('home.projetos')}</a></li>
@@ -51,11 +52,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <figure className={estilos.figura}>
-        <SecaoVazia altura={300}>{t('home.lanyard_reservado')}</SecaoVazia>
-        <figcaption className="metadado">{t('home.lanyard_legenda')}</figcaption>
-      </figure>
 
       <section id="wakatime" className={estilos.secao}>
         <h2 className="rotulo">

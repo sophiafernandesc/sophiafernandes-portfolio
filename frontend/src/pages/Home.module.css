@@ -87,9 +87,6 @@
 
 .botaoPrimario:hover { text-decoration: none; filter: brightness(1.1); }
 
-.figura { margin: 0 0 var(--esp-12); }
-.figura figcaption { margin-top: var(--esp-3); }
-
 .secao { margin-bottom: var(--esp-12); }
 .secao h2 { margin-bottom: var(--esp-4); }
 
