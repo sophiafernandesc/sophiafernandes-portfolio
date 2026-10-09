@@ -14,6 +14,10 @@ export default defineConfig({
     {
       enforce: 'pre',
       ...mdx({
+        // Sem providerImportSource o MDX compilado ignora o MDXProvider: nem o
+        // mapa de elementos do Design System nem componentes como FiguraExterna
+        // chegam ao conteúdo. É esta linha que liga os dois.
+        providerImportSource: '@mdx-js/react',
         remarkPlugins: [
           remarkFrontmatter,
           [remarkMdxFrontmatter, { name: 'frontmatter' }],
