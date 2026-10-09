@@ -1,0 +1,99 @@
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-interface);
+  font-size: var(--tam-corpo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: var(--fonte-titulo);
+  letter-spacing: -0.02em; /* mono tem avanço largo; fecha um pouco no título */
+}
+
+p {
+  margin: 0 0 var(--esp-4);
+  color: var(--cor-texto-secundario);
+  max-width: var(--largura-leitura);
+}
+
+a {
+  color: var(--cor-acento);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 3px;
+  border-radius: var(--raio-peq);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Atalho de teclado para pular o menu: exigência básica de acessibilidade */
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: var(--esp-2);
+  background: var(--cor-acento-forte);
+  color: var(--cor-acento-contraste);
+  padding: var(--esp-2) var(--esp-4);
+  border-radius: var(--raio-peq);
+  z-index: 100;
+}
+
+.pular-para-conteudo:focus {
+  left: var(--esp-4);
+}
+
+/* Fundo quadriculado sutil, usado em blocos de destaque */
+.grade {
+  background-image:
+    linear-gradient(var(--cor-superficie) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cor-superficie) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Rótulo de seção: mono, caixa alta, entreletra aberta */
+.rotulo {
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-rotulo);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cor-acento);
+  margin: 0;
+}
+
+/* Metadado: datas, legendas, créditos */
+.metadado {
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-rotulo);
+  color: var(--cor-texto-apagado);
+}

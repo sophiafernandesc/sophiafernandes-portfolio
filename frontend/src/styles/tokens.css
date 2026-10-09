@@ -1,0 +1,123 @@
+/* Design System do portfólio.
+   Espelha a página "Design System" do arquivo do Figma:
+   https://www.figma.com/design/rZBIBF1oWuGe6IK20gs4RA/Portfolio
+   Qualquer cor ou tamanho novo entra aqui primeiro, nunca direto no componente.
+
+   DOIS TEMAS. O escuro é o padrão e vive em :root; o claro sobrescreve só as
+   cores em :root[data-tema='claro']. Tudo que não é cor (tipografia,
+   espaçamento, layout) é comum aos dois e fica declarado uma única vez.
+
+   O color-scheme acompanha o tema: sem ele, campo de formulário, scrollbar e
+   menu suspenso nativos continuam claros sobre o fundo escuro. */
+
+:root {
+  color-scheme: dark;
+
+  /* Cores: base escura com um único acento */
+  --cor-fundo: #0a090d;
+  --cor-superficie: #141218;
+  --cor-superficie-elevada: #1f1b29;
+  --cor-borda: #26222f;
+  --cor-borda-forte: #3a3348;
+  --cor-acento-forte: #7c5ce6;
+  --cor-acento: #a78bfa;
+  --cor-acento-contraste: #140f28; /* texto sobre o acento forte */
+  --cor-texto: #e8e6ee;
+  --cor-texto-secundario: #b9b3c6;
+  --cor-texto-apagado: #857e95;
+  --cor-texto-sutil: #837c99;
+  /* Texto de controle: chip de stack e botao secundario. Um degrau acima do
+     secundario, porque vive sobre superficie elevada e precisa se destacar. */
+  --cor-texto-controle: #cec9dc;
+
+  /* Cores de papel unico, antes fixas dentro dos CSS Modules */
+  --cor-capa-projeto: #2a2440;   /* fundo do espaco reservado da capa */
+  --cor-chip-ativo: #2e2744;     /* fundo do filtro selecionado */
+  --cor-campo-fundo: #191720;    /* fundo de input e textarea */
+  --cor-erro: #d98a8a;           /* borda e texto de campo invalido */
+}
+
+/* Tema claro. O acento TROCA de valor: #a78bfa não alcança 4.5:1 sobre fundo
+   claro, então o papel de "acento legível" passa para um roxo mais fechado.
+   E --cor-acento-contraste inverte: escuro sobre o botão roxo no tema escuro,
+   branco no claro. */
+:root[data-tema='claro'] {
+  color-scheme: light;
+
+  --cor-fundo: #faf9fb;
+  --cor-superficie: #ffffff;
+  --cor-superficie-elevada: #f2f0f6;
+  --cor-borda: #ddd7e9;
+  /* A borda forte contorna input e textarea. Sobre branco ela precisa de 3:1
+     (WCAG 1.4.11): e o contorno que identifica o campo. #9b8fb4 da 3,01:1. */
+  --cor-borda-forte: #9b8fb4;
+  --cor-acento-forte: #6d4ae0;
+  --cor-acento: #5b3cc4;
+  --cor-acento-contraste: #ffffff;
+  --cor-texto: #1a1721;
+  --cor-texto-secundario: #4a4458;
+  --cor-texto-apagado: #6e6880;
+  --cor-texto-sutil: #736c82;
+  --cor-texto-controle: #5f5973;
+
+  --cor-capa-projeto: #ebe6f7;
+  --cor-chip-ativo: #e7e0fb;
+  --cor-campo-fundo: #ffffff;
+  /* O vermelho claro do tema escuro da 2,5:1 sobre fundo claro. Aqui o erro
+     precisa de um vermelho fechado: #b3261e da 6,23:1. */
+  --cor-erro: #b3261e;
+}
+
+:root {
+  /* Tipografia: Inter no texto corrido, Geist Mono em título, menu e metadado.
+     Mono em título é escolha estética deliberada (ref.: tjklint.github.io);
+     prosa longa fica em Inter, que é onde Sobre e as páginas de projeto vivem. */
+  --fonte-interface: 'Inter', system-ui, -apple-system, sans-serif;
+  --fonte-mono: 'Geist Mono', ui-monospace, 'SF Mono', monospace;
+  --fonte-titulo: 'Geist Mono', ui-monospace, 'SF Mono', monospace;
+
+  --tam-display: 3.375rem;   /* 54px */
+  --tam-h1: 2.5rem;          /* 40px */
+  --tam-h2: 1.5rem;          /* 24px */
+  --tam-h3: 1.125rem;        /* 18px */
+  --tam-corpo: 1rem;         /* 16px */
+  --tam-corpo-peq: 0.875rem; /* 14px */
+  --tam-menu: 0.8125rem;     /* 13px */
+  --tam-rotulo: 0.6875rem;   /* 11px */
+
+  /* Espaçamento */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-6: 1.5rem;
+  --esp-8: 2rem;
+  --esp-12: 3rem;
+  --esp-16: 4rem;
+
+  /* Layout */
+  --largura-maxima: 1440px;
+  --gutter: 4rem;
+  --largura-leitura: 46rem; /* limite de linha para texto corrido */
+
+  --raio: 10px;
+  --raio-peq: 6px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --tam-display: 2rem;
+    --tam-h1: 1.75rem;
+    --gutter: 1.25rem;
+  }
+}
+
+/* Respeita quem pediu menos animação no sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
