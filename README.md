@@ -24,12 +24,12 @@
 > **Em desenvolvimento -Sprint 01 (planejamento e prototipação).**
 > Sprint 01 entrega planejamento, wireframes e Design System. O código da aplicação entra na Sprint 02.
 
-[![Versão](https://img.shields.io/badge/Versão-v0.1.0-7C5CE6?style=for-the-badge)](https://github.com/sophiafernandesc/sophiafernandes-portfolio/releases)
-![React](https://img.shields.io/badge/React-19-7C5CE6?style=for-the-badge&logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-7-7C5CE6?style=for-the-badge&logo=vite&logoColor=white)
-![MDX](https://img.shields.io/badge/MDX-3-7C5CE6?style=for-the-badge&logo=mdx&logoColor=white)
-![Java](https://img.shields.io/badge/Java-25-7C5CE6?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.3-7C5CE6?style=for-the-badge&logo=springboot&logoColor=white)
+[![Versão](https://img.shields.io/badge/Versão-v0.1.0-8F74EA?style=for-the-badge)](https://github.com/sophiafernandesc/sophiafernandes-portfolio/releases)
+![React](https://img.shields.io/badge/React-19-8F74EA?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-8F74EA?style=for-the-badge&logo=vite&logoColor=white)
+![MDX](https://img.shields.io/badge/MDX-3-8F74EA?style=for-the-badge&logo=mdx&logoColor=white)
+![Java](https://img.shields.io/badge/Java-25-8F74EA?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.3-8F74EA?style=for-the-badge&logo=springboot&logoColor=white)
 ![GitHub last commit](https://img.shields.io/github/last-commit/sophiafernandesc/sophiafernandes-portfolio?style=for-the-badge&logo=clockify)
 ![GitHub repo size](https://img.shields.io/github/repo-size/sophiafernandesc/sophiafernandes-portfolio?style=for-the-badge&logo=files)
 
@@ -111,7 +111,7 @@ O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajet
 * **Framework/Biblioteca:** React 19
 * **Conteúdo:** MDX 3 -cada projeto é um arquivo `.mdx` com frontmatter padronizado
 * **Linguagem:** JavaScript ES6+
-* **Build Tool:** Vite 7
+* **Build Tool:** Vite 8
 * **Roteamento:** React Router
 * **Estilização:** CSS Modules com variáveis de tema
 * **Internacionalização:** react-i18next
@@ -137,7 +137,8 @@ O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajet
 ### 🎨 Design System
 
 * **Tipografia:** Inter na interface, Geist Mono em metadados e números
-* **Tema:** base escura com acento roxo (`#7C5CE6` e `#A78BFA`)
+* **Tema:** dois temas, escuro como padrão. Acento roxo: `#8F74EA` no escuro,
+  `#6D4AE0` no claro. Todos os pares de texto passam em 4.5:1.
 * Documentado em [`docs/design-system.md`](./docs/design-system.md) e no [arquivo do Figma](https://www.figma.com/design/rZBIBF1oWuGe6IK20gs4RA/Portfolio)
 
 ---
@@ -156,7 +157,7 @@ A aplicação é dividida em duas partes independentes, com responsabilidades be
                            │ compilado no build
                            ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  FRONT-END  ·  React 19 + Vite 7 + MDX 3                    │
+│  FRONT-END  ·  React 19 + Vite 8 + MDX 3                    │
 │  React Router  ·  react-i18next  ·  CSS Modules             │
 │  Hospedagem: Vercel (site estático)                         │
 └──────────────────────────┬──────────────────────────────────┘
@@ -244,7 +245,7 @@ O `MDXProvider`, montado no `main.jsx`, mapeia os elementos do Markdown para os 
 
 * **Node.js:** v20 LTS ou superior -necessário para o front-end
 * **npm:** v10 ou superior
-* **Java JDK:** 17 ou superior -necessário para o back-end
+* **Java JDK:** 25 -necessário para o back-end
 
 > [!TIP]
 > Não há banco de dados nesta versão, então o Docker não é necessário para rodar o projeto localmente.
