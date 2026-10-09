@@ -1,0 +1,107 @@
+{
+  "menu": {
+    "home": "Home",
+    "sobre": "About",
+    "projetos": "Projects",
+    "experiencias": "Experience",
+    "contato": "Contact",
+    "abrir": "Open menu",
+    "fechar": "Close menu",
+    "idioma": "Switch language",
+    "tema": "Theme",
+    "tema_claro": "Switch to light theme",
+    "tema_escuro": "Switch to dark theme",
+    "pular": "Skip to content"
+  },
+  "home": {
+    "papel": "Software Engineering",
+    "local": "Belo Horizonte, Brazil",
+    "resumo": "I build software with roots in electronics and embedded systems. Currently working on back-end with Java and Spring Boot, after a year and four months validating infotainment and connectivity at Stellantis.",
+    "foto_alt": "Photo of Sophia Fernandes",
+    "curriculo": "Resume",
+    "contato": "Contact",
+    "figura_legenda": "Fig. 1 - where it all started.",
+    "figura_credito": "CC BY model, credit to the author.",
+    "wakatime": "Wakatime",
+    "wakatime_periodo": "Last 4 weeks",
+    "projetos": "Projects",
+    "projetos_sub": "Selection",
+    "ver_todos": "See all {{count}} projects"
+  },
+  "sobre": {
+    "titulo": "About me",
+    "subtitulo": "Full content in Portuguese and English · switch at the top",
+    "formacao": "Education",
+    "cursos": "Courses"
+  },
+  "projetos": {
+    "titulo": "Projects",
+    "subtitulo": "{{count}} projects · oldest to most recent",
+    "filtro_todos": "All",
+    "ver_projeto": "View project",
+    "repositorio": "GitHub",
+    "capa_alt": "Screenshot of the {{titulo}} project",
+    "vazio": "No projects match this filter."
+  },
+  "experiencias": {
+    "titulo": "Experience",
+    "subtitulo": "Internship, outreach project and technical activities",
+    "atual": "present",
+    "atividades": "Technical and academic activities"
+  },
+  "contato": {
+    "titulo": "Contact",
+    "subtitulo": "I reply within 48 hours",
+    "canais": "Direct channels",
+    "form_titulo": "Send a message",
+    "nome": "Name",
+    "nome_ph": "Your name",
+    "email": "Email",
+    "email_ph": "you@email.com",
+    "mensagem": "Message",
+    "mensagem_ph": "Tell me about the role, the project or your question...",
+    "enviar": "Send message",
+    "enviando": "Sending...",
+    "protecao": "Protected by rate limit and honeypot.",
+    "sucesso": "Message sent. Thanks for reaching out!",
+    "erro": "Couldn't send it right now. Please try again shortly.",
+    "erro_nome": "Please enter your name.",
+    "erro_email": "Please enter a valid email.",
+    "erro_mensagem": "Please write a message."
+  },
+  "rodape": {
+    "direitos": "© {{ano}} Sophia Fernandes"
+  },
+  "erro": {
+    "nao_encontrado": "Page not found",
+    "voltar": "Back to home"
+  },
+  "neofetch": {
+    "campos": [
+      {
+        "chave": "Education",
+        "valor": "Software Engineering, PUC Minas"
+      },
+      {
+        "chave": "Focus",
+        "valor": "Back-end, Java and Spring Boot"
+      },
+      {
+        "chave": "Roots",
+        "valor": "Embedded systems, C/C++, CAN"
+      },
+      {
+        "chave": "Now",
+        "valor": "Intern at Stellantis, Electrical Lab"
+      },
+      {
+        "chave": "Languages",
+        "valor": "Native Portuguese, fluent English"
+      },
+      {
+        "chave": "Status",
+        "valor": "Open to opportunities"
+      }
+    ]
+  }
+}
