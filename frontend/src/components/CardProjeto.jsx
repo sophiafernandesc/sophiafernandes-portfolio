@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FiArrowRight, FiExternalLink } from 'react-icons/fi';
@@ -7,14 +8,37 @@ export default function CardProjeto({ projeto }) {
   const { t } = useTranslation();
   const { slug, titulo, ano, ordem, stack = [], repo, capa, Corpo } = projeto;
 
+  /* Enquanto nem todo projeto tem capa, o arquivo declarado no frontmatter pode
+     não existir. Sem isto o navegador desenha o ícone de imagem quebrada, que
+     parece defeito; com isto o card cai no mesmo espaço reservado dos projetos
+     que ainda não declararam capa nenhuma. */
+  const [capaFalhou, setCapaFalhou] = useState(false);
+  const mostrarCapa = capa && !capaFalhou;
+
   return (
     <article className={estilos.card}>
       <div className={estilos.capa}>
-        {capa ? (
-          <img src={capa} alt={t('projetos.capa_alt', { titulo })} loading="lazy" />
-        ) : (
-          <span className="metadado">foto / GIF do projeto</span>
-        )}
+        {/* A moldura de janela vale para capa e para espaço reservado: dá
+            enquadramento comum a material de tipos diferentes (captura de
+            tela, card de título, foto de hardware) e mantém a coluna com o
+            mesmo ritmo, com ou sem imagem. */}
+        <div className={estilos.janela}>
+          <span className={estilos.barra} aria-hidden="true">
+            <span className={estilos.ponto} />
+            <span className={estilos.ponto} />
+            <span className={estilos.ponto} />
+          </span>
+          {mostrarCapa ? (
+            <img
+              src={capa}
+              alt={t('projetos.capa_alt', { titulo })}
+              loading="lazy"
+              onError={() => setCapaFalhou(true)}
+            />
+          ) : (
+            <span className={estilos.capaReservada}>{t('projetos.capa_reservada')}</span>
+          )}
+        </div>
       </div>
 
       <div className={estilos.texto}>

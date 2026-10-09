@@ -33,7 +33,6 @@
   --cor-texto-controle: #cec9dc;
 
   /* Cores de papel unico, antes fixas dentro dos CSS Modules */
-  --cor-capa-projeto: #2a2440;   /* fundo do espaco reservado da capa */
   --cor-chip-ativo: #2e2744;     /* fundo do filtro selecionado */
   --cor-campo-fundo: #191720;    /* fundo de input e textarea */
   --cor-erro: #d98a8a;           /* borda e texto de campo invalido */
@@ -62,7 +61,6 @@
   --cor-texto-sutil: #736c82;
   --cor-texto-controle: #5f5973;
 
-  --cor-capa-projeto: #ebe6f7;
   --cor-chip-ativo: #e7e0fb;
   --cor-campo-fundo: #ffffff;
   /* O vermelho claro do tema escuro da 2,5:1 sobre fundo claro. Aqui o erro

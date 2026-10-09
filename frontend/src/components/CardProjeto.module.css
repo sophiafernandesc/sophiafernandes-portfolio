@@ -1,24 +1,72 @@
 .card {
   display: grid;
-  grid-template-columns: 230px 1fr;
+  /* A coluna da capa é 16:9 para bater com o material: card de título,
+     captura de tela e recorte do hardware são todos ~1,78 de proporção.
+     Slot e imagem na mesma proporção = a imagem preenche sem corte. */
+  grid-template-columns: 420px 1fr;
   background-color: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
   overflow: hidden;
 }
 
+/* Sem cor de fundo própria: a janela flutua direto sobre a superfície do
+   card, como na referência. Um bloco colorido atrás competia com a imagem e
+   fazia cada capa parecer de um site diferente. */
 .capa {
-  background-color: var(--cor-capa-projeto);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 170px;
+  padding: var(--esp-6);
 }
 
-.capa img {
+.janela {
   width: 100%;
-  height: 100%;
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-peq);
+  overflow: hidden;
+  background-color: var(--cor-superficie-elevada);
+}
+
+/* Barra de título da janela. Decoração: vai com aria-hidden no JSX. */
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  background-color: var(--cor-superficie-elevada);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.ponto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--cor-borda-forte);
+}
+
+/* A imagem preenche a janela inteira. O slot e a imagem são ambos 16:9, então
+   o cover quase não tem o que cortar. */
+.janela img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* Ocupa a mesma área 16:9 da imagem, dentro da janela. A .metadado global não
+   serve aqui: ela usa --cor-texto-apagado, que não alcança 4.5:1 sobre a
+   superfície elevada da janela. */
+.capaReservada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-rotulo);
+  color: var(--cor-texto-secundario);
+  text-align: center;
+  padding: var(--esp-4);
 }
 
 .texto {
@@ -89,9 +137,5 @@
 @media (max-width: 720px) {
   .card {
     grid-template-columns: 1fr;
-  }
-
-  .capa {
-    min-height: 150px;
   }
 }
