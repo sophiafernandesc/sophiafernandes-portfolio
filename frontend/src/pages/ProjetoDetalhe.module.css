@@ -1,0 +1,14 @@
+.pagina { max-width: 60rem; }
+.voltar { display: inline-flex; align-items: center; gap: var(--esp-2); font-size: var(--tam-corpo-peq); }
+.cabecalho { margin: var(--esp-6) 0 var(--esp-8); }
+.cabecalho h1 { font-size: var(--tam-h1); margin: var(--esp-2) 0 var(--esp-4); }
+.stack { display: flex; flex-wrap: wrap; gap: var(--esp-2); list-style: none; padding: 0; margin: 0 0 var(--esp-4); }
+.chip {
+  font-family: var(--fonte-mono); font-size: var(--tam-rotulo); color: var(--cor-texto-controle);
+  background-color: var(--cor-superficie-elevada); border: 1px solid var(--cor-borda-forte);
+  border-radius: 999px; padding: 3px 9px;
+}
+.corpo { max-width: var(--largura-leitura); }
+.corpo p { line-height: 1.75; }
+.corpo h2 { font-size: var(--tam-h2); margin: var(--esp-8) 0 var(--esp-3); }
+.corpo img { border-radius: var(--raio); border: 1px solid var(--cor-borda); margin: var(--esp-4) 0; }

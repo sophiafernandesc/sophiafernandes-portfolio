@@ -1,0 +1,111 @@
+.hero {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--esp-12);
+  align-items: start;
+  margin-bottom: var(--esp-12);
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.indice {
+  list-style: none;
+  padding: 0;
+  margin: var(--esp-2) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+}
+
+.indice a {
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-rotulo);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-texto-apagado);
+}
+
+.indice a:hover { color: var(--cor-acento); }
+
+.nome {
+  font-size: var(--tam-display);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--esp-2);
+}
+
+.papel {
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-rotulo);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-acento);
+  margin-bottom: var(--esp-4);
+}
+
+.local { color: var(--cor-texto-sutil); }
+
+.resumo {
+  font-size: var(--tam-corpo);
+  line-height: 1.75;
+  max-width: var(--largura-leitura);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-2);
+  margin-top: var(--esp-6);
+}
+
+.botao, .botaoPrimario {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-3) var(--esp-4);
+  border-radius: var(--raio-peq);
+  font-size: var(--tam-corpo-peq);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.botao {
+  border: 1px solid var(--cor-borda-forte);
+  color: var(--cor-texto-controle);
+}
+
+.botao:hover { border-color: var(--cor-acento); text-decoration: none; }
+
+.botaoPrimario {
+  background-color: var(--cor-acento-forte);
+  color: var(--cor-acento-contraste);
+}
+
+.botaoPrimario:hover { text-decoration: none; filter: brightness(1.1); }
+
+.figura { margin: 0 0 var(--esp-12); }
+.figura figcaption { margin-top: var(--esp-3); }
+
+.secao { margin-bottom: var(--esp-12); }
+.secao h2 { margin-bottom: var(--esp-4); }
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.verTodos {
+  display: inline-block;
+  margin-top: var(--esp-4);
+  font-size: var(--tam-corpo-peq);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: var(--esp-6); }
+}

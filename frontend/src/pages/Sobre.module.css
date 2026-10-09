@@ -1,0 +1,11 @@
+.cabecalho { margin-bottom: var(--esp-8); }
+.cabecalho h1 { font-size: var(--tam-h1); margin-bottom: var(--esp-2); }
+.corpo { margin-top: var(--esp-8); max-width: var(--largura-leitura); }
+.corpo p { line-height: 1.75; }
+.corpo h2 {
+  font-family: var(--fonte-mono); font-size: var(--tam-rotulo); font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--cor-acento);
+  margin: var(--esp-8) 0 var(--esp-3);
+}
+.corpo ul { list-style: none; padding: 0; margin: 0; }
+.corpo li { color: var(--cor-texto-secundario); font-size: var(--tam-corpo-peq); padding: var(--esp-1) 0; }
