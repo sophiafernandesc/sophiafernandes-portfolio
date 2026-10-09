@@ -51,6 +51,15 @@ a:hover {
   border-radius: var(--raio-peq);
 }
 
+/* O <main> recebe tabindex="-1" e foco na troca de rota só para o leitor de
+   tela anunciar a página nova. Não é um controle, e o anel nele desenha um
+   retângulo roxo em volta da página inteira. Alvo de foco programático não
+   leva anel; os controles de verdade continuam com o deles. */
+[tabindex='-1']:focus,
+[tabindex='-1']:focus-visible {
+  outline: none;
+}
+
 img {
   max-width: 100%;
   display: block;
