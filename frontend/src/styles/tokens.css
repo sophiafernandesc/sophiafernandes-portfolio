@@ -19,7 +19,9 @@
   --cor-superficie-elevada: #1f1b29;
   --cor-borda: #26222f;
   --cor-borda-forte: #3a3348;
-  --cor-acento-forte: #7c5ce6;
+  /* Clareado de #7c5ce6: com o texto escuro de --cor-acento-contraste
+     aquele valor dava 4,01:1, abaixo do minimo de 4,5. Agora da 5,19:1. */
+  --cor-acento-forte: #8f74ea;
   --cor-acento: #a78bfa;
   --cor-acento-contraste: #140f28; /* texto sobre o acento forte */
   --cor-texto: #e8e6ee;
