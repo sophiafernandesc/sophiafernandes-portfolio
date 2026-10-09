@@ -25,7 +25,7 @@ export default function Layout() {
     }
     window.scrollTo(0, 0);
     // preventScroll: sem ele o navegador rola o <main> para dentro da viewport
-    // e, como o cabeçalho é sticky, para logo abaixo dele — desfazendo o
+    // e, como o cabeçalho é sticky, para logo abaixo dele, desfazendo o
     // scrollTo acima e deixando o título coberto pelo menu.
     principal.current?.focus({ preventScroll: true });
   }, [pathname]);
