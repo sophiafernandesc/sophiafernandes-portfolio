@@ -1,0 +1,7 @@
+.cabecalho { margin-bottom: var(--esp-8); }
+.cabecalho h1 { font-size: var(--tam-h1); margin-bottom: var(--esp-2); }
+.corpo { max-width: var(--largura-leitura); }
+.corpo h2 { font-size: var(--tam-h2); margin: var(--esp-8) 0 var(--esp-1); }
+.corpo h2 + p { font-family: var(--fonte-mono); font-size: var(--tam-rotulo); color: var(--cor-acento); letter-spacing: 0.08em; text-transform: uppercase; }
+.corpo ul { padding-left: var(--esp-4); }
+.corpo li { color: var(--cor-texto-secundario); padding: var(--esp-1) 0; line-height: 1.7; }

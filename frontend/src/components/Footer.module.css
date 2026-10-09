@@ -1,0 +1,31 @@
+.rodape {
+  border-top: 1px solid var(--cor-borda);
+  margin-top: var(--esp-16);
+}
+
+.conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: var(--esp-6) var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-4);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: var(--esp-2);
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-rotulo);
+  color: var(--cor-texto-apagado);
+}
+
+.links a {
+  color: var(--cor-texto-apagado);
+}
+
+.links a:hover {
+  color: var(--cor-acento);
+}

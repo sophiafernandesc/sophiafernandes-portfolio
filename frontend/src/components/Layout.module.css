@@ -1,0 +1,6 @@
+.principal {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: var(--esp-12) var(--gutter) var(--esp-16);
+  outline: none;
+}

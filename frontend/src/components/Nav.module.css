@@ -1,0 +1,152 @@
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.nav {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: var(--esp-4) var(--gutter);
+  display: grid;
+  /* Três colunas iguais nas pontas: é isso que deixa o menu do meio
+     realmente centralizado, mesmo com o seletor de idioma à direita. */
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--esp-4);
+}
+
+.itens {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  gap: var(--esp-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-menu);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-apagado);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.item:hover {
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+}
+
+.ativo {
+  color: var(--cor-texto);
+  border-bottom-color: var(--cor-acento);
+}
+
+/* Agrupa os dois controles da direita: tema e idioma. Ocupa a coluna 3
+   para o menu do meio seguir centralizado. */
+.controles {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--esp-3);
+}
+
+.idioma {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+}
+
+.tema {
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-peq);
+  cursor: pointer;
+  padding: var(--esp-1);
+  width: 28px;
+  height: 28px;
+  font-size: 0.875rem;
+  color: var(--cor-texto-apagado);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tema:hover {
+  color: var(--cor-acento);
+  border-color: var(--cor-borda-forte);
+}
+
+.globo {
+  color: var(--cor-acento);
+  width: 15px;
+  height: 15px;
+}
+
+.lng,
+.hamburguer {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--esp-1);
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-menu);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto-apagado);
+}
+
+.lngAtivo {
+  color: var(--cor-acento);
+}
+
+.divisor {
+  color: var(--cor-borda-forte);
+}
+
+.hamburguer {
+  display: none;
+  grid-column: 1;
+  justify-self: start;
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+}
+
+@media (max-width: 860px) {
+  .nav {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hamburguer {
+    display: block;
+  }
+
+  .itens {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--esp-4);
+    padding-top: var(--esp-4);
+  }
+
+  .itensAbertos {
+    display: flex;
+  }
+
+  .controles {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}

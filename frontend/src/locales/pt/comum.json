@@ -1,0 +1,110 @@
+{
+  "menu": {
+    "home": "Home",
+    "sobre": "Sobre",
+    "projetos": "Projetos",
+    "experiencias": "Experiências",
+    "contato": "Contato",
+    "abrir": "Abrir menu",
+    "fechar": "Fechar menu",
+    "idioma": "Trocar idioma",
+    "tema": "Tema",
+    "tema_claro": "Ativar tema claro",
+    "tema_escuro": "Ativar tema escuro",
+    "pular": "Pular para o conteúdo"
+  },
+  "home": {
+    "papel": "Engenharia de Software",
+    "local": "Belo Horizonte, Brasil",
+    "resumo": "Desenvolvo software com origem em eletrônica e sistemas embarcados. Hoje em back-end com Java e Spring Boot, depois de um ano e quatro meses validando infotainment e conectividade na Stellantis.",
+    "foto_alt": "Foto de Sophia Fernandes",
+    "curriculo": "Currículo",
+    "contato": "Contato",
+    "wakatime": "Wakatime",
+    "wakatime_periodo": "Últimas 4 semanas",
+    "projetos": "Projetos",
+    "projetos_sub": "Seleção",
+    "ver_todos": "Ver todos os {{count}} projetos",
+    "cracha_legenda": "Crachá estático. A versão 3D, pendurada no cordão e com física, entra na Sprint 03."
+  },
+  "sobre": {
+    "titulo": "Sobre mim",
+    "subtitulo": "Conteúdo completo em português e inglês · alterne no topo",
+    "formacao": "Formação",
+    "cursos": "Cursos",
+    "esp32_reservado": "modelo 3D da ESP32 - arraste para girar",
+    "esp32_legenda": "Fig. 1 - onde tudo começou.",
+    "esp32_credito": "Modelo CC BY, crédito ao autor."
+  },
+  "projetos": {
+    "titulo": "Projetos",
+    "subtitulo": "{{count}} projetos · do mais antigo ao mais recente",
+    "filtro_todos": "Todos",
+    "ver_projeto": "Ver projeto",
+    "repositorio": "GitHub",
+    "capa_alt": "Captura do projeto {{titulo}}",
+    "vazio": "Nenhum projeto com esse filtro.",
+    "capa_reservada": "foto ou GIF do projeto"
+  },
+  "experiencias": {
+    "titulo": "Experiências",
+    "subtitulo": "Estágio, extensão e atividades técnicas",
+    "atual": "atual",
+    "atividades": "Atividades técnicas e acadêmicas"
+  },
+  "contato": {
+    "titulo": "Contato",
+    "subtitulo": "Respondo em até 48 horas",
+    "canais": "Canais diretos",
+    "form_titulo": "Enviar uma mensagem",
+    "nome": "Nome",
+    "nome_ph": "Seu nome",
+    "email": "E-mail",
+    "email_ph": "voce@email.com",
+    "mensagem": "Mensagem",
+    "mensagem_ph": "Conte sobre a vaga, o projeto ou a dúvida...",
+    "enviar": "Enviar mensagem",
+    "enviando": "Enviando...",
+    "protecao": "Protegido por rate limit e honeypot.",
+    "sucesso": "Mensagem enviada. Obrigada pelo contato!",
+    "erro": "Não consegui enviar agora. Tente de novo em instantes.",
+    "erro_nome": "Informe seu nome.",
+    "erro_email": "Informe um e-mail válido.",
+    "erro_mensagem": "Escreva uma mensagem."
+  },
+  "rodape": {
+    "direitos": "© {{ano}} Sophia Fernandes"
+  },
+  "erro": {
+    "nao_encontrado": "Página não encontrada",
+    "voltar": "Voltar para a home"
+  },
+  "neofetch": {
+    "campos": [
+      {
+        "chave": "Formação",
+        "valor": "Engenharia de Software, PUC Minas"
+      },
+      {
+        "chave": "Foco",
+        "valor": "Back-end, Java e Spring Boot"
+      },
+      {
+        "chave": "Origem",
+        "valor": "Sistemas embarcados, C/C++, CAN"
+      },
+      {
+        "chave": "Agora",
+        "valor": "Estágio na Stellantis, Exp. Elétrica"
+      },
+      {
+        "chave": "Idiomas",
+        "valor": "Português nativo, inglês fluente"
+      },
+      {
+        "chave": "Status",
+        "valor": "Aberta a oportunidades"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+.cartao {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--esp-6);
+  align-items: center;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--esp-6);
+}
+
+.arte {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--cor-acento-forte);
+  margin: 0;
+}
+
+.dados { margin: 0; font-family: var(--fonte-mono); font-size: 0.75rem; }
+
+.usuario {
+  color: var(--cor-acento);
+  font-weight: 500;
+  margin: 0 0 var(--esp-2);
+  border-bottom: 1px solid var(--cor-borda);
+  padding-bottom: var(--esp-2);
+  max-width: none;
+}
+
+.linha { display: grid; grid-template-columns: 9rem 1fr; gap: var(--esp-2); padding: 2px 0; }
+.chave { color: var(--cor-acento); }
+.valor { margin: 0; color: var(--cor-texto-secundario); }
+
+@media (max-width: 720px) {
+  .cartao { grid-template-columns: 1fr; }
+  .arte { display: none; }
+  .linha { grid-template-columns: 1fr; gap: 0; }
+}
