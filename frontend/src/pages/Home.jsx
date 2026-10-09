@@ -53,10 +53,8 @@ export default function Home() {
       </section>
 
       <figure className={estilos.figura}>
-        <SecaoVazia altura={300}>modelo 3D da ESP32 - arraste para girar</SecaoVazia>
-        <figcaption className="metadado">
-          {t('home.figura_legenda')} {t('home.figura_credito')}
-        </figcaption>
+        <SecaoVazia altura={300}>{t('home.lanyard_reservado')}</SecaoVazia>
+        <figcaption className="metadado">{t('home.lanyard_legenda')}</figcaption>
       </figure>
 
       <section id="wakatime" className={estilos.secao}>

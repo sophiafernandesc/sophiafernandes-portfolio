@@ -20,19 +20,22 @@
     "foto_alt": "Foto de Sophia Fernandes",
     "curriculo": "Currículo",
     "contato": "Contato",
-    "figura_legenda": "Fig. 1 - onde tudo começou.",
-    "figura_credito": "Modelo CC BY, crédito ao autor.",
     "wakatime": "Wakatime",
     "wakatime_periodo": "Últimas 4 semanas",
     "projetos": "Projetos",
     "projetos_sub": "Seleção",
-    "ver_todos": "Ver todos os {{count}} projetos"
+    "ver_todos": "Ver todos os {{count}} projetos",
+    "lanyard_reservado": "crachá 3D com física - arraste para balançar",
+    "lanyard_legenda": "Peça interativa. Entra na Sprint 03."
   },
   "sobre": {
     "titulo": "Sobre mim",
     "subtitulo": "Conteúdo completo em português e inglês · alterne no topo",
     "formacao": "Formação",
-    "cursos": "Cursos"
+    "cursos": "Cursos",
+    "esp32_reservado": "modelo 3D da ESP32 - arraste para girar",
+    "esp32_legenda": "Fig. 1 - onde tudo começou.",
+    "esp32_credito": "Modelo CC BY, crédito ao autor."
   },
   "projetos": {
     "titulo": "Projetos",

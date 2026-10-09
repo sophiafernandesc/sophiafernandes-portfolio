@@ -20,19 +20,22 @@
     "foto_alt": "Photo of Sophia Fernandes",
     "curriculo": "Resume",
     "contato": "Contact",
-    "figura_legenda": "Fig. 1 - where it all started.",
-    "figura_credito": "CC BY model, credit to the author.",
     "wakatime": "Wakatime",
     "wakatime_periodo": "Last 4 weeks",
     "projetos": "Projects",
     "projetos_sub": "Selection",
-    "ver_todos": "See all {{count}} projects"
+    "ver_todos": "See all {{count}} projects",
+    "lanyard_reservado": "3D lanyard with physics - drag to swing",
+    "lanyard_legenda": "Interactive piece. Arrives in Sprint 03."
   },
   "sobre": {
     "titulo": "About me",
     "subtitulo": "Full content in Portuguese and English · switch at the top",
     "formacao": "Education",
-    "cursos": "Courses"
+    "cursos": "Courses",
+    "esp32_reservado": "3D model of the ESP32 - drag to rotate",
+    "esp32_legenda": "Fig. 1 - where it all started.",
+    "esp32_credito": "CC BY model, credit to the author."
   },
   "projetos": {
     "titulo": "Projects",

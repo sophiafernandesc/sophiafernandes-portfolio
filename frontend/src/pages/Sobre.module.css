@@ -1,5 +1,24 @@
 .cabecalho { margin-bottom: var(--esp-8); }
 .cabecalho h1 { font-size: var(--tam-h1); margin-bottom: var(--esp-2); }
+/* Cartão de dados à esquerda, modelo 3D à direita. O minmax impede que o
+   Neofetch, que é mono e tem largura mínima, esmague a figura. */
+.apresentacao {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--esp-8);
+  align-items: start;
+}
+
+.figura { margin: 0; }
+.figura figcaption { margin-top: var(--esp-3); }
+
+@media (max-width: 860px) {
+  .apresentacao {
+    grid-template-columns: 1fr;
+    gap: var(--esp-6);
+  }
+}
+
 .corpo { margin-top: var(--esp-8); max-width: var(--largura-leitura); }
 .corpo p { line-height: 1.75; }
 .corpo h2 {
