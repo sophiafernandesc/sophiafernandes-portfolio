@@ -1,0 +1,23 @@
+.figura {
+  margin: var(--esp-4) 0 var(--esp-6);
+  max-width: 32rem;
+}
+
+.alvo {
+  display: block;
+  border-radius: var(--raio);
+}
+
+.alvo:hover {
+  text-decoration: none;
+}
+
+.imagem {
+  width: 100%;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.figura figcaption {
+  margin-top: var(--esp-2);
+}

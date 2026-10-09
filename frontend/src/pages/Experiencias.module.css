@@ -5,5 +5,3 @@
 .corpo h2 + p { font-family: var(--fonte-mono); font-size: var(--tam-rotulo); color: var(--cor-acento); letter-spacing: 0.08em; text-transform: uppercase; }
 .corpo ul { padding-left: var(--esp-4); }
 .corpo li { color: var(--cor-texto-secundario); padding: var(--esp-1) 0; line-height: 1.7; }
-.veiculo { margin-top: var(--esp-8); max-width: 32rem; }
-.veiculo p { margin-top: var(--esp-2); }
