@@ -1,11 +1,7 @@
 .figura { margin: 0; min-width: 0; }
-.figura figcaption { margin-top: var(--esp-3); }
 .painel {
   position: relative;
   height: var(--altura-esp32);
-  background-color: var(--cor-superficie);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
   overflow: hidden;
 }
 .imagem, .visualizador {
@@ -14,23 +10,8 @@
   height: 100%;
   object-fit: contain;
 }
+
 .visualizador { --poster-color: transparent; }
-.botao {
-  position: absolute;
-  bottom: var(--esp-4);
-  left: 50%;
-  transform: translateX(-50%);
-  padding: var(--esp-2) var(--esp-4);
-  border: 1px solid var(--cor-borda-controle);
-  border-radius: var(--raio-peq);
-  background: var(--cor-superficie);
-  color: var(--cor-texto);
-  font-family: var(--fonte-interface);
-  font-size: var(--tam-corpo-peq);
-  white-space: nowrap;
-  cursor: pointer;
-}
-.botao:hover { border-color: var(--cor-acento); }
 
 .aviso {
   position: absolute;

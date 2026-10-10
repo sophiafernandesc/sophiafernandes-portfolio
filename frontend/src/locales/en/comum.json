@@ -35,14 +35,11 @@
   },
   "sobre": {
     "titulo": "About me",
-    "subtitulo": "Full content in Portuguese and English · switch at the top",
     "formacao": "Education",
     "cursos": "Courses",
-    "esp32_legenda": "ESP32 · where it all started. Model by",
     "esp32_alt": "ESP32 DOIT DEVKIT V1 board with a metal module and two rows of pins",
-    "esp32_ativar": "Explore in 3D",
-    "esp32_controles": "Drag to rotate or use the keyboard arrow keys.",
-    "esp32_erro": "The 3D model could not load. Showing the board image."
+    "esp32_erro": "The 3D model could not load. Showing the board image.",
+    "chamada": "From electronics to back-end."
   },
   "projetos": {
     "titulo": "Projects",
@@ -81,7 +78,9 @@
     "erro_mensagem": "Please write a message."
   },
   "rodape": {
-    "direitos": "© {{ano}} Sophia Fernandes"
+    "direitos": "© {{ano}} Sophia Fernandes",
+    "modelo_esp32": "ESP32 model by",
+    "esp32_derivada": "Static image rendered from the model."
   },
   "erro": {
     "nao_encontrado": "Page not found",
@@ -108,10 +107,6 @@
       {
         "chave": "Languages",
         "valor": "Native Portuguese, fluent English"
-      },
-      {
-        "chave": "Status",
-        "valor": "Open to opportunities"
       }
     ]
   }
