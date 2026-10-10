@@ -37,7 +37,7 @@
 .campo input, .campo textarea {
   width: 100%; padding: var(--esp-3) var(--esp-4);
   background-color: var(--cor-campo-fundo); color: var(--cor-texto);
-  border: 1px solid var(--cor-borda-forte); border-radius: var(--raio-peq);
+  border: 1px solid var(--cor-borda-controle); border-radius: var(--raio-peq);
   font-family: var(--fonte-interface); font-size: var(--tam-corpo-peq);
 }
 

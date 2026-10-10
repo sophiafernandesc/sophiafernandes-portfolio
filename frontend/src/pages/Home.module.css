@@ -74,7 +74,7 @@
 }
 
 .botao {
-  border: 1px solid var(--cor-borda-forte);
+  border: 1px solid var(--cor-borda-controle);
   color: var(--cor-texto-controle);
 }
 

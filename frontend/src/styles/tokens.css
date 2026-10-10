@@ -19,6 +19,7 @@
   --cor-superficie-elevada: #1f1b29;
   --cor-borda: #26222f;
   --cor-borda-forte: #3a3348;
+  --cor-borda-controle: #706686; /* >= 3:1 sobre campo e superficie elevada */
   /* Clareado de #7c5ce6: com o texto escuro de --cor-acento-contraste
      aquele valor dava 4,01:1, abaixo do minimo de 4,5. Agora da 5,19:1. */
   --cor-acento-forte: #8f74ea;
@@ -52,6 +53,7 @@
   /* A borda forte contorna input e textarea. Sobre branco ela precisa de 3:1
      (WCAG 1.4.11): e o contorno que identifica o campo. #9b8fb4 da 3,01:1. */
   --cor-borda-forte: #9b8fb4;
+  --cor-borda-controle: #9285ad; /* >= 3:1 sobre campo e superficie elevada */
   --cor-acento-forte: #6d4ae0;
   --cor-acento: #5b3cc4;
   --cor-acento-contraste: #ffffff;

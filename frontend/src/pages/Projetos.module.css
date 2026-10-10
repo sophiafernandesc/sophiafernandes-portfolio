@@ -13,7 +13,7 @@
   font-size: var(--tam-rotulo);
   color: var(--cor-texto-controle);
   background-color: var(--cor-superficie-elevada);
-  border: 1px solid var(--cor-borda-forte);
+  border: 1px solid var(--cor-borda-controle);
   border-radius: 999px;
   padding: 5px 10px;
   cursor: pointer;
