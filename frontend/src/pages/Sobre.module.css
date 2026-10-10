@@ -1,27 +1,43 @@
-.cabecalho { margin-bottom: var(--esp-8); }
-.cabecalho h1 { font-size: var(--tam-h1); margin-bottom: var(--esp-2); }
-/* Cartão de dados à esquerda, modelo 3D à direita. O minmax impede que o
-   Neofetch, que é mono e tem largura mínima, esmague a figura. */
+.cabecalho { margin-bottom: var(--esp-12); }
+.cabecalho h1 { font-size: var(--tam-h1); }
 .apresentacao {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--esp-8);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--esp-12);
+  align-items: center;
 }
-
-@media (max-width: 860px) {
-  .apresentacao {
-    grid-template-columns: 1fr;
-    gap: var(--esp-6);
-  }
+.trajetoria { min-width: 0; }
+.chamada {
+  font-family: var(--fonte-interface);
+  font-size: var(--tam-h2);
+  font-weight: 500;
+  margin-bottom: var(--esp-6);
 }
-
-.corpo { margin-top: var(--esp-8); max-width: var(--largura-leitura); }
-.corpo p { line-height: 1.75; }
+.trajetoria p { line-height: 1.75; }
+.corpo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--esp-4) var(--esp-12);
+  margin-top: var(--esp-16);
+  padding-top: var(--esp-8);
+  border-top: 1px solid var(--cor-borda);
+}
 .corpo h2 {
-  font-family: var(--fonte-mono); font-size: var(--tam-rotulo); font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--cor-acento);
-  margin: var(--esp-8) 0 var(--esp-3);
+  font-family: var(--fonte-interface);
+  font-size: var(--tam-h3);
+  font-weight: 500;
+  color: var(--cor-texto);
+  margin: 0;
 }
 .corpo ul { list-style: none; padding: 0; margin: 0; }
 .corpo li { color: var(--cor-texto-secundario); font-size: var(--tam-corpo-peq); padding: var(--esp-1) 0; }
+/* Cada título vem antes de sua lista no MDX: os títulos ficam na primeira linha. */
+.corpo > h2:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+.corpo > ul:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+.corpo > h2:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+.corpo > ul:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+@media (max-width: 860px) {
+  .apresentacao { grid-template-columns: 1fr; gap: var(--esp-6); }
+  .corpo { display: block; margin-top: var(--esp-8); }
+  .corpo h2:not(:first-child) { margin-top: var(--esp-8); }
+}

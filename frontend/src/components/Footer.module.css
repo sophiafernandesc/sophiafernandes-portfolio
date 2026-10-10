@@ -29,3 +29,9 @@
 .links a:hover {
   color: var(--cor-acento);
 }
+
+.creditos {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--esp-6);
+}
