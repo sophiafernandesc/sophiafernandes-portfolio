@@ -136,7 +136,7 @@ menu usam `--cor-acento`, que é o acento legível, não o de preenchimento.
 | `-` | intervalo | `2024/1 - 2026/1` |
 | `—` | **nunca** | travessão não é usado em lugar nenhum do site |
 
-A ausência do travessão é verificável: `grep -r "—" frontend/src frontend/index.html`
+A ausência do travessão é verificável: `grep - r "—" frontend/src frontend/index.html`
 deve retornar vazio.
 
 ### Fundo quadriculado

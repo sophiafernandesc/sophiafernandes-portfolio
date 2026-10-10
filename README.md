@@ -1,4 +1,4 @@
-# 🏷️ Portfólio Profissional -Sophia Fernandes 👨‍💻
+# 🏷️ Portfólio Profissional - Sophia Fernandes 👨‍💻
 
 > [!NOTE]
 > Site de portfólio profissional que reúne trajetória, projetos, experiências e formas de contato, em português e inglês.
@@ -8,7 +8,7 @@
   <tr>
     <td width="800px">
       <div align="justify">
-        Este projeto é o <b>Laboratório 01</b> da disciplina <b>DIAW -Desenvolvimento e Integração de Aplicações Web</b>, do curso de Engenharia de Software da PUC Minas. O objetivo é projetar e desenvolver um website de portfólio profissional, cobrindo <i>front-end</i>, <i>back-end</i> e <i>hospedagem na nuvem</i>. O site apresenta uma seção <b>Sobre Mim</b> bilíngue, uma <b>linha do tempo de projetos</b> do mais antigo ao mais recente, as <b>experiências profissionais e acadêmicas</b> e uma página de <b>contato</b> com formulário funcional. Além dos requisitos obrigatórios, o projeto exibe um <b>gráfico de horas de código</b> a partir da API do Wakatime.
+        Este projeto é o <b>Laboratório 01</b> da disciplina <b>DIAW - Desenvolvimento e Integração de Aplicações Web</b>, do curso de Engenharia de Software da PUC Minas. O objetivo é projetar e desenvolver um website de portfólio profissional, cobrindo <i>front-end</i>, <i>back-end</i> e <i>hospedagem na nuvem</i>. O site apresenta uma seção <b>Sobre Mim</b> bilíngue, uma <b>linha do tempo de projetos</b> do mais antigo ao mais recente, as <b>experiências profissionais e acadêmicas</b> e uma página de <b>contato</b> com formulário funcional. Além dos requisitos obrigatórios, o projeto exibe um <b>gráfico de horas de código</b> a partir da API do Wakatime.
       </div>
     </td>
     <td>
@@ -21,8 +21,8 @@
 ## 🚧 Status do Projeto
 
 > [!WARNING]
-> **Em desenvolvimento -Sprint 01 (planejamento e prototipação).**
-> Sprint 01 entrega planejamento, wireframes e Design System. O código da aplicação entra na Sprint 02.
+> **Em desenvolvimento - Sprint 02 (funcionalidades principais).**
+> Sprint 01 concluída: planejamento, wireframes e Design System. Sprint 02 em andamento: front-end, conteúdo e integração do formulário com o back-end, desenvolvido à parte.
 
 [![Versão](https://img.shields.io/badge/Versão-v0.1.0-8F74EA?style=for-the-badge)](https://github.com/sophiafernandesc/sophiafernandes-portfolio/releases)
 ![React](https://img.shields.io/badge/React-19-8F74EA?style=for-the-badge&logo=react&logoColor=white)
@@ -73,9 +73,9 @@
 
 ## 📝 Sobre o Projeto
 
-O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajetória que começou em eletrônica e sistemas embarcados e hoje se concentra em desenvolvimento de software. Currículo em PDF e perfil do LinkedIn não dão conta de mostrar um pipeline que vai do barramento CAN até a tela de um aplicativo -precisa de imagem, de GIF e de espaço para explicar decisão de arquitetura.
+O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajetória que começou em eletrônica e sistemas embarcados e hoje se concentra em desenvolvimento de software. Currículo em PDF e perfil do LinkedIn não dão conta de mostrar um pipeline que vai do barramento CAN até a tela de um aplicativo - precisa de imagem, de GIF e de espaço para explicar decisão de arquitetura.
 
-**Qual problema resolve.** Um recrutador tem poucos minutos e precisa entender, rápido, o que a pessoa já construiu e com o quê. O site organiza isso em uma linha do tempo cronológica, em que cada projeto traz descrição, tecnologias, evidência visual e link para o repositório -e, quando o projeto merece, uma página própria com arquitetura e capturas de tela.
+**Qual problema resolve.** Um recrutador tem poucos minutos e precisa entender, rápido, o que a pessoa já construiu e com o quê. O site organiza isso em uma linha do tempo cronológica, em que cada projeto traz descrição, tecnologias, evidência visual e link para o repositório - e, quando o projeto merece, uma página própria com arquitetura e capturas de tela.
 
 **Contexto.** Acadêmico e profissional ao mesmo tempo: é o Laboratório 01 da disciplina DIAW, avaliado em 15 pontos distribuídos em três sprints, e também uma peça real de apresentação profissional, que continua no ar depois da entrega.
 
@@ -100,7 +100,7 @@ O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajet
 
 **Backlog (fora do escopo desta entrega):**
 
-- 📖 **Livro de visitas:** mensagens públicas de quem visita o site, com moderação e proteção contra spam. Adiado por exigir persistência, banco de dados e fluxo de moderação -será implementado depois da entrega da disciplina.
+- 📖 **Livro de visitas:** mensagens públicas de quem visita o site, com moderação e proteção contra spam. Adiado por exigir persistência, banco de dados e fluxo de moderação - será implementado depois da entrega da disciplina.
 
 ---
 
@@ -109,7 +109,7 @@ O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajet
 ### 💻 Front-end
 
 * **Framework/Biblioteca:** React 19
-* **Conteúdo:** MDX 3 -cada projeto é um arquivo `.mdx` com frontmatter padronizado
+* **Conteúdo:** MDX 3 - cada projeto é um arquivo `.mdx` com frontmatter padronizado
 * **Linguagem:** JavaScript ES6+
 * **Build Tool:** Vite 8
 * **Roteamento:** React Router
@@ -125,14 +125,14 @@ O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajet
 * **Cliente HTTP:** RestClient, para consumir a API do Wakatime
 
 > [!NOTE]
-> O back-end é **stateless**: não há banco de dados nesta entrega. Os dois endpoints apenas encaminham requisições -um para a API do Wakatime, outro para o servidor de e-mail. O banco entra junto com o livro de visitas, que está no backlog.
+> O back-end é **stateless**: não há banco de dados nesta entrega. Os dois endpoints apenas encaminham requisições - um para a API do Wakatime, outro para o servidor de e-mail. O banco entra junto com o livro de visitas, que está no backlog.
 
 ### ⚙️ Infraestrutura & DevOps
 
 * **Cloud (front-end):** Vercel
 * **Cloud (back-end):** Render
 * **Versionamento:** Git e GitHub
-* **Design:** Figma -wireframes e Design System
+* **Design:** Figma - wireframes e Design System
 
 ### 🎨 Design System
 
@@ -179,7 +179,7 @@ A aplicação é dividida em duas partes independentes, com responsabilidades be
 
 ### Como o MDX funciona neste projeto
 
-MDX é Markdown que aceita componentes React. Um compilador transforma cada arquivo `.mdx` num **módulo JavaScript** durante o build -o navegador nunca recebe o arquivo original. Cada arquivo exporta duas coisas:
+MDX é Markdown que aceita componentes React. Um compilador transforma cada arquivo `.mdx` num **módulo JavaScript** durante o build - o navegador nunca recebe o arquivo original. Cada arquivo exporta duas coisas:
 
 | Export | O que é | Onde é usado |
 | :--- | :--- | :--- |
@@ -218,7 +218,7 @@ export const projetos = Object.values(modulos)
 
 **O fluxo de trabalho que isso cria:** para publicar um projeto novo, basta criar o arquivo, preencher o frontmatter, escrever o corpo e dar `git push`. O card aparece na posição correta da linha do tempo sozinho, e a página de detalhe passa a existir. Nenhum painel administrativo, nenhum banco de dados e nenhum arquivo central para manter sincronizado.
 
-O `MDXProvider`, montado no `main.jsx`, mapeia os elementos do Markdown para os componentes do Design System -títulos, blocos de código e figuras saem estilizados sem precisar de classe dentro do conteúdo.
+O `MDXProvider`, montado no `main.jsx`, mapeia os elementos do Markdown para os componentes do Design System - títulos, blocos de código e figuras saem estilizados sem precisar de classe dentro do conteúdo.
 
 ### Decisões e trade-offs
 
@@ -243,9 +243,9 @@ O `MDXProvider`, montado no `main.jsx`, mapeia os elementos do Markdown para os 
 
 ### Pré-requisitos
 
-* **Node.js:** v20 LTS ou superior -necessário para o front-end
+* **Node.js:** v20 LTS ou superior - necessário para o front-end
 * **npm:** v10 ou superior
-* **Java JDK:** 25 -necessário para o back-end
+* **Java JDK:** 25 - necessário para o back-end
 
 > [!TIP]
 > Não há banco de dados nesta versão, então o Docker não é necessário para rodar o projeto localmente.
@@ -323,18 +323,18 @@ npm run dev
 🎨 *Disponível em **http://localhost:5173**.*
 
 > [!TIP]
-> O front-end funciona sozinho, sem o back-end no ar. Nesse caso, o gráfico do Wakatime exibe estado vazio e o formulário de contato fica indisponível, enquanto o resto do site opera normalmente -que é o comportamento esperado em produção também.
+> O front-end funciona sozinho, sem o back-end no ar. Nesse caso, o gráfico do Wakatime exibe estado vazio e o formulário de contato fica indisponível, enquanto o resto do site opera normalmente - que é o comportamento esperado em produção também.
 
 ---
 
 ## 🚀 Deploy
 
 ```bash
-# Front-end -gera a pasta /dist com arquivos estáticos
+# Front-end - gera a pasta /dist com arquivos estáticos
 cd frontend
 npm run build
 
-# Back-end -gera o .jar executável em /target
+# Back-end - gera o .jar executável em /target
 cd ../backend
 ./mvnw clean package
 ```
@@ -483,8 +483,8 @@ cd backend
 ## 🤝 Contribuição
 
 1. Faça um `fork` do projeto.
-2. Crie uma branch para sua feature (`git checkout -b feature/minha-feature`).
-3. Commit suas mudanças (`git commit -m 'feat: adiciona funcionalidade X'`), seguindo [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+2. Crie uma branch para sua feature (`git checkout - b feature/minha-feature`).
+3. Commit suas mudanças (`git commit - m 'feat: adiciona funcionalidade X'`), seguindo [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 4. Faça o `push` para a branch (`git push origin feature/minha-feature`).
 5. Abra um **Pull Request**.
 
@@ -492,8 +492,8 @@ cd backend
 
 ## 🙏 Agradecimentos
 
-* [**Engenharia de Software PUC Minas**](https://www.instagram.com/engsoftwarepucminas/) -pela estrutura acadêmica e pelo fomento às boas práticas de engenharia.
-* [**Prof. Dr. João Paulo Aramuni**](https://github.com/joaopauloaramuni) -pela orientação na disciplina de DIAW e pelo template de documentação adotado neste projeto.
+* [**Engenharia de Software PUC Minas**](https://www.instagram.com/engsoftwarepucminas/) - pela estrutura acadêmica e pelo fomento às boas práticas de engenharia.
+* [**Prof. Dr. João Paulo Aramuni**](https://github.com/joaopauloaramuni) - pela orientação na disciplina de DIAW e pelo template de documentação adotado neste projeto.
 * **Referências de portfólio** que inspiraram decisões de design: [Raphael Sena](https://www.raphaelsena.com/), [Luca Azalim](https://azal.im/) e [Abdul Momin](https://abdulmomin.dev/).
 
 ---
