@@ -98,6 +98,7 @@
   --esp-16: 4rem;
 
   /* Layout */
+  --altura-esp32: 20rem;
   --altura-foto-home: 20rem;
   --altura-texto-digitando: 1.75rem;
   --largura-maxima: 1440px;

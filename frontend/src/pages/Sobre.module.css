@@ -9,9 +9,6 @@
   align-items: start;
 }
 
-.figura { margin: 0; }
-.figura figcaption { margin-top: var(--esp-3); }
-
 @media (max-width: 860px) {
   .apresentacao {
     grid-template-columns: 1fr;

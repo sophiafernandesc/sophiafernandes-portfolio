@@ -115,6 +115,7 @@ O portfólio nasceu de uma necessidade concreta: reunir num só lugar uma trajet
 * **Roteamento:** React Router
 * **Estilização:** CSS Modules com variáveis de tema
 * **Internacionalização:** react-i18next
+* **Visualização 3D:** `@google/model-viewer`, carregado sob demanda na página Sobre. Modelo ESP32 de Davyd Tovstyj, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), com imagem estática no celular e com movimento reduzido. Créditos em `frontend/public/models/README.md`.
 * **Plugins MDX:** `@mdx-js/rollup`, `remark-frontmatter`, `remark-mdx-frontmatter`
 
 ### 🖥️ Back-end

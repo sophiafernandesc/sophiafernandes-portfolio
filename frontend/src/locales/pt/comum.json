@@ -38,9 +38,11 @@
     "subtitulo": "Conteúdo completo em português e inglês · alterne no topo",
     "formacao": "Formação",
     "cursos": "Cursos",
-    "esp32_reservado": "modelo 3D da ESP32 - arraste para girar",
-    "esp32_legenda": "Fig. 1 - onde tudo começou.",
-    "esp32_credito": "Modelo CC BY, crédito ao autor."
+    "esp32_legenda": "ESP32 · onde tudo começou. Modelo por",
+    "esp32_alt": "Placa ESP32 DOIT DEVKIT V1 com módulo metálico e duas fileiras de pinos",
+    "esp32_ativar": "Explorar em 3D",
+    "esp32_controles": "Arraste para girar ou use as setas do teclado.",
+    "esp32_erro": "Não foi possível carregar o 3D. Exibindo a imagem da placa."
   },
   "projetos": {
     "titulo": "Projetos",

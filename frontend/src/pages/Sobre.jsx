@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import Neofetch from '../components/Neofetch';
-import SecaoVazia from '../components/SecaoVazia';
+import FiguraEsp32 from '../components/FiguraEsp32';
 import useIdioma from '../hooks/useIdioma';
 import estilos from './Sobre.module.css';
 import SobrePt from '../conteudo/sobre/pt.mdx';
@@ -23,12 +23,7 @@ export default function Sobre() {
       <div className={estilos.apresentacao}>
         <Neofetch />
 
-        <figure className={estilos.figura}>
-          <SecaoVazia altura={280}>{t('sobre.esp32_reservado')}</SecaoVazia>
-          <figcaption className="metadado">
-            {t('sobre.esp32_legenda')} {t('sobre.esp32_credito')}
-          </figcaption>
-        </figure>
+        <FiguraEsp32 />
       </div>
 
       <div className={estilos.corpo}>
