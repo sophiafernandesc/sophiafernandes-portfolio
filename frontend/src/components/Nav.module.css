@@ -122,7 +122,7 @@
   color: var(--cor-texto);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
   .nav {
     grid-template-columns: auto 1fr;
   }

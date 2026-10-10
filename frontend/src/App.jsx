@@ -6,6 +6,7 @@ import Projetos from './pages/Projetos';
 import ProjetoDetalhe from './pages/ProjetoDetalhe';
 import Experiencias from './pages/Experiencias';
 import Contato from './pages/Contato';
+import Curriculo from './pages/Curriculo';
 import NaoEncontrada from './pages/NaoEncontrada';
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: 'projetos', element: <Projetos /> },
       { path: 'projetos/:slug', element: <ProjetoDetalhe /> },
       { path: 'experiencias', element: <Experiencias /> },
+      { path: 'curriculo', element: <Curriculo /> },
       { path: 'contato', element: <Contato /> },
       { path: '*', element: <NaoEncontrada /> },
     ],

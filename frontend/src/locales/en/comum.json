@@ -11,7 +11,8 @@
     "tema": "Theme",
     "tema_claro": "Switch to light theme",
     "tema_escuro": "Switch to dark theme",
-    "pular": "Skip to content"
+    "pular": "Skip to content",
+    "curriculo": "Resume"
   },
   "home": {
     "papel": "Software Engineering",
@@ -109,5 +110,12 @@
         "valor": "Native Portuguese, fluent English"
       }
     ]
+  },
+  "curriculo": {
+    "subtitulo": "Experience, education and skills.",
+    "baixar": "Download resume (EN)",
+    "abrir": "Open PDF",
+    "pendente": "Updated PDF in preparation.",
+    "contatos": "Professional contacts"
   }
 }

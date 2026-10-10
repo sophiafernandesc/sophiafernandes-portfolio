@@ -40,9 +40,9 @@ export default function Home() {
           <p className={estilos.resumo}>{t('home.resumo2')}</p>
 
           <div className={estilos.acoes}>
-            <a className={estilos.botaoPrimario} href={LINKS.curriculo} target="_blank" rel="noopener noreferrer">
+            <Link className={estilos.botaoPrimario} to="/curriculo">
               <FiFileText aria-hidden="true" /> {t('home.curriculo')}
-            </a>
+            </Link>
             <Link className={estilos.botao} to="/contato">
               <FiMail aria-hidden="true" /> {t('home.contato')}
             </Link>

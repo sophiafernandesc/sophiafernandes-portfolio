@@ -11,7 +11,8 @@
     "tema": "Tema",
     "tema_claro": "Ativar tema claro",
     "tema_escuro": "Ativar tema escuro",
-    "pular": "Pular para o conteúdo"
+    "pular": "Pular para o conteúdo",
+    "curriculo": "Currículo"
   },
   "home": {
     "papel": "Engenharia de Software",
@@ -109,5 +110,12 @@
         "valor": "Português nativo, inglês fluente"
       }
     ]
+  },
+  "curriculo": {
+    "subtitulo": "Trajetória, formação e competências.",
+    "baixar": "Baixar currículo (PT)",
+    "abrir": "Abrir PDF",
+    "pendente": "PDF atualizado em preparação.",
+    "contatos": "Contatos profissionais"
   }
 }
