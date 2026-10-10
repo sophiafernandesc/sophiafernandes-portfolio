@@ -1,15 +1,39 @@
 ---
 slug: programacao-modular
-titulo: Programação Modular
+titulo: ReservasJá
 ano: "2026/1"
 ordem: 4
-stack: ["Spring Boot", "JavaScript", "HTML", "CSS"]
-repo: 
-capa: /img/projetos/programacao-modular.png
-tags: ["Java", "Web"]
+stack: ["Java", "Spring Boot", "MySQL", "JavaScript"]
+repo: https://github.com/Programacao-Modular-PUC/trabalho-pratico-grupo1
+capa: /img/projetos/programacao-modular.webp
+tags: ["Java", "Web", "Padrões de Projeto"]
 destaque: false
 ---
 
-Projeto acadêmico da disciplina de Programação Modular, rodando localmente. Repositório institucional, com os colegas de grupo creditados na descrição.
+Sistema de gestão de hospedagem para a Península de Maraú, que organiza o
+aluguel de quartos em residências locais. Desenvolvido em grupo na disciplina de
+Programação Modular, com API REST em Spring Boot sobre arquitetura em camadas,
+persistência em MySQL e interface em JavaScript, HTML e CSS.
 
-TODO: descrever o escopo e o papel que exerci no grupo.
+A disciplina pedia padrões de projeto aplicados a um problema real, e o sistema
+usa três: **Singleton** na configuração global, **Strategy** nas regras de
+tarifação (alta e baixa temporada, feriado, promocional e cliente frequente) e
+**Observer** nas notificações.
+
+## O que eu construí
+
+- **Camada de notificações com Observer.** Interface `NotificacaoObserver`,
+  evento base `AluguelEvent`, os eventos do ciclo de vida da reserva e o
+  `NotificacaoDispatcher`, integrado ao `AluguelService`. Os canais de e-mail,
+  SMS, WhatsApp e notificação interna recebem os eventos sem que o serviço
+  conheça nenhum deles.
+- **Tratamento de erros.** Exceções customizadas e handler global, para a API
+  responder erro de negócio com status e mensagem próprios em vez de stack trace.
+- **Regras de negócio do aluguel.** Validação de datas, de disponibilidade do
+  quarto e de capacidade por tipo de acomodação.
+- **Autenticação.** Endpoint `POST /auth/login` com `CredenciaisInvalidasException`.
+- **Integração front-end e API.** Reestruturação do front em `http.js`,
+  `session.js` e `env.js`, e ligação das páginas de login, dashboard e hóspede à
+  API real, incluindo o cadastro. Correção da serialização circular em
+  `Residencia` e configuração de CORS.
+- **Testes.** Cobertura dos fluxos de notificação e dos serviços de aluguel.

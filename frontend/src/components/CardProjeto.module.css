@@ -87,7 +87,12 @@
   margin: 0 0 var(--esp-2);
 }
 
-.resumo p {
+/* No card entra só o PRIMEIRO bloco do corpo do MDX, cortado em duas linhas.
+   As duas regras miram filhos diretos e não se sobrepõem: uma estiliza o
+   primeiro, a outra esconde todos os seguintes, seja parágrafo, cabeçalho ou
+   lista. Mirar `.resumo p` não funciona aqui: ela tem especificidade maior e
+   o display do clamp anula o display:none dos parágrafos seguintes. */
+.resumo > :first-child {
   font-size: var(--tam-corpo-peq);
   margin: 0;
   display: -webkit-box;
@@ -97,8 +102,8 @@
   overflow: hidden;
 }
 
-.resumo p + p {
-  display: none; /* no card, só o primeiro parágrafo */
+.resumo > :first-child ~ * {
+  display: none;
 }
 
 .stack {
