@@ -1,0 +1,9 @@
+.linha {
+  height: var(--altura-texto-digitando);
+  margin-bottom: var(--esp-4);
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-corpo-peq);
+  line-height: var(--altura-texto-digitando);
+  color: var(--cor-acento);
+  white-space: nowrap;
+}

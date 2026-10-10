@@ -16,7 +16,7 @@
   "home": {
     "papel": "Engenharia de Software",
     "local": "Belo Horizonte, Brasil",
-    "resumo": "Desenvolvo software com origem em eletrônica e sistemas embarcados. Hoje em back-end com Java e Spring Boot, depois de um ano e três meses validando infotainment e conectividade na Stellantis.",
+    "resumo": "Desenvolvo back-end com Java e Spring Boot, com origem em eletrônica e sistemas embarcados. Na Stellantis, validei infotainment e conectividade automotiva. Nos meus projetos, construo o caminho inteiro do dado: do barramento CAN à tela do aplicativo.",
     "foto_alt": "Foto de Sophia Fernandes",
     "curriculo": "Currículo",
     "contato": "Contato",
@@ -25,7 +25,13 @@
     "projetos": "Projetos",
     "projetos_sub": "Seleção",
     "ver_todos": "Ver todos os {{count}} projetos",
-    "cracha_legenda": "Crachá estático. A versão 3D, pendurada no cordão e com física, entra na Sprint 03."
+    "resumo2": "Gosto de problema que exige entender o sistema inteiro antes da primeira linha de código. Foi assim depurando ECUs, onde falha intermitente só cede a método, e é assim no back-end, onde modelagem errada cobra o preço seis meses depois. A linha do tempo abaixo começa num robô quadrúpede em C++ e chega em plataformas full-stack.",
+    "especialidades": [
+      "da eletrônica ao back-end",
+      "do barramento CAN à nuvem",
+      "do firmware à API REST",
+      "do sensor à tela do app"
+    ]
   },
   "sobre": {
     "titulo": "Sobre mim",

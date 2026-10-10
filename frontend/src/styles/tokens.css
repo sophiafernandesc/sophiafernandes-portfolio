@@ -98,6 +98,8 @@
   --esp-16: 4rem;
 
   /* Layout */
+  --altura-foto-home: 20rem;
+  --altura-texto-digitando: 1.75rem;
   --largura-maxima: 1440px;
   --gutter: 4rem;
   --largura-leitura: 46rem; /* limite de linha para texto corrido */

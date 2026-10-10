@@ -16,7 +16,7 @@
   "home": {
     "papel": "Software Engineering",
     "local": "Belo Horizonte, Brazil",
-    "resumo": "I build software with roots in electronics and embedded systems. Currently working on back-end with Java and Spring Boot, after a year and three months validating infotainment and connectivity at Stellantis.",
+    "resumo": "I build back-end with Java and Spring Boot, with roots in electronics and embedded systems. At Stellantis, I validated automotive infotainment and connectivity. In my own projects, I build the whole path the data takes: from the CAN bus to the app screen.",
     "foto_alt": "Photo of Sophia Fernandes",
     "curriculo": "Resume",
     "contato": "Contact",
@@ -25,7 +25,13 @@
     "projetos": "Projects",
     "projetos_sub": "Selection",
     "ver_todos": "See all {{count}} projects",
-    "cracha_legenda": "Static badge. The 3D version, hanging from the lanyard with physics, arrives in Sprint 03."
+    "resumo2": "I like problems that require understanding the whole system before the first line of code. That was true debugging ECUs, where an intermittent failure only yields to method, and it is true in back-end work, where the wrong model charges you six months later. The timeline below starts with a quadruped robot in C++ and ends in full-stack platforms.",
+    "especialidades": [
+      "from electronics to back-end",
+      "from the CAN bus to the cloud",
+      "from firmware to REST API",
+      "from the sensor to the screen"
+    ]
   },
   "sobre": {
     "titulo": "About me",

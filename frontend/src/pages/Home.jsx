@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FiFileText, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
 import CardProjeto from '../components/CardProjeto';
 import Cracha from '../components/Cracha';
+import TextoDigitando from '../components/TextoDigitando';
 import SecaoVazia from '../components/SecaoVazia';
 import useIdioma from '../hooks/useIdioma';
 import { getProjetos } from '../conteudo/projetos';
@@ -34,7 +35,9 @@ export default function Home() {
             <span aria-hidden="true"> / </span>
             <span className={estilos.local}>{t('home.local')}</span>
           </p>
+          <TextoDigitando key={idioma} frases={t('home.especialidades', { returnObjects: true })} />
           <p className={estilos.resumo}>{t('home.resumo')}</p>
+          <p className={estilos.resumo}>{t('home.resumo2')}</p>
 
           <div className={estilos.acoes}>
             <a className={estilos.botaoPrimario} href={LINKS.curriculo} target="_blank" rel="noopener noreferrer">
