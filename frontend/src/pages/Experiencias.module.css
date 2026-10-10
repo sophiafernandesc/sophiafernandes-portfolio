@@ -1,7 +1,6 @@
-.cabecalho { margin-bottom: var(--esp-8); }
+.cabecalho { margin-bottom: var(--esp-12); }
 .cabecalho h1 { font-size: var(--tam-h1); margin-bottom: var(--esp-2); }
-.corpo { max-width: var(--largura-leitura); }
-.corpo h2 { font-size: var(--tam-h2); margin: var(--esp-8) 0 var(--esp-1); }
-.corpo h2 + p { font-family: var(--fonte-mono); font-size: var(--tam-rotulo); color: var(--cor-acento); letter-spacing: 0.08em; text-transform: uppercase; }
-.corpo ul { padding-left: var(--esp-4); }
-.corpo li { color: var(--cor-texto-secundario); padding: var(--esp-1) 0; line-height: 1.7; }
+.corpo > h2 { font-size: var(--tam-h3); padding-top: var(--esp-8); border-top: 1px solid var(--cor-borda); margin-bottom: var(--esp-6); }
+.corpo > ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--esp-6); }
+.corpo > ul li { padding-left: var(--esp-4); border-left: 1px solid var(--cor-borda-forte); color: var(--cor-texto-secundario); font-size: var(--tam-corpo-peq); line-height: 1.75; }
+@media (max-width: 720px) { .corpo > ul { grid-template-columns: 1fr; } }
