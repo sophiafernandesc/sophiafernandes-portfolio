@@ -16,7 +16,7 @@
   "home": {
     "papel": "Engenharia de Software",
     "local": "Belo Horizonte, Brasil",
-    "resumo": "Desenvolvo software com origem em eletrônica e sistemas embarcados. Hoje em back-end com Java e Spring Boot, depois de um ano e quatro meses validando infotainment e conectividade na Stellantis.",
+    "resumo": "Desenvolvo software com origem em eletrônica e sistemas embarcados. Hoje em back-end com Java e Spring Boot, depois de um ano e três meses validando infotainment e conectividade na Stellantis.",
     "foto_alt": "Foto de Sophia Fernandes",
     "curriculo": "Currículo",
     "contato": "Contato",
@@ -95,7 +95,7 @@
       },
       {
         "chave": "Agora",
-        "valor": "Estágio na Stellantis, Exp. Elétrica"
+        "valor": "Extensão WebTech, PUC Minas"
       },
       {
         "chave": "Idiomas",

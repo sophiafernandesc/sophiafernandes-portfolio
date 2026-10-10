@@ -16,7 +16,7 @@
   "home": {
     "papel": "Software Engineering",
     "local": "Belo Horizonte, Brazil",
-    "resumo": "I build software with roots in electronics and embedded systems. Currently working on back-end with Java and Spring Boot, after a year and four months validating infotainment and connectivity at Stellantis.",
+    "resumo": "I build software with roots in electronics and embedded systems. Currently working on back-end with Java and Spring Boot, after a year and three months validating infotainment and connectivity at Stellantis.",
     "foto_alt": "Photo of Sophia Fernandes",
     "curriculo": "Resume",
     "contato": "Contact",
@@ -95,7 +95,7 @@
       },
       {
         "chave": "Now",
-        "valor": "Intern at Stellantis, Electrical Lab"
+        "valor": "WebTech outreach project, PUC Minas"
       },
       {
         "chave": "Languages",
