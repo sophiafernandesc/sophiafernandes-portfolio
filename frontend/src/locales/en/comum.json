@@ -50,7 +50,9 @@
     "repositorio": "GitHub",
     "capa_alt": "Screenshot of the {{titulo}} project",
     "vazio": "No projects match this filter.",
-    "capa_reservada": "project photo or GIF"
+    "capa_reservada": "project photo or GIF",
+    "mais_tecnologias_one": "+{{count}} technology",
+    "mais_tecnologias_other": "+{{count}} technologies"
   },
   "experiencias": {
     "titulo": "Experience",

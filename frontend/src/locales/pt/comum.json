@@ -50,7 +50,9 @@
     "repositorio": "GitHub",
     "capa_alt": "Captura do projeto {{titulo}}",
     "vazio": "Nenhum projeto com esse filtro.",
-    "capa_reservada": "foto ou GIF do projeto"
+    "capa_reservada": "foto ou GIF do projeto",
+    "mais_tecnologias_one": "+{{count}} tecnologia",
+    "mais_tecnologias_other": "+{{count}} tecnologias"
   },
   "experiencias": {
     "titulo": "Experiências",
