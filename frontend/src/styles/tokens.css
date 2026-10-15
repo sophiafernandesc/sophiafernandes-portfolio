@@ -101,6 +101,7 @@
   --altura-esp32: 26rem;
   --largura-rotulo-sobre: 5rem;
   --altura-foto-home: 20rem;
+  --altura-recaptcha: 4.875rem;     /* iframe do reCAPTCHA, 78px */
   --altura-barra-grafico: 0.625rem; /* barra do gráfico de linguagens */
   --largura-rotulo-grafico: 8.5rem;  /* coluna do nome da linguagem */
   --altura-texto-digitando: 1.75rem;

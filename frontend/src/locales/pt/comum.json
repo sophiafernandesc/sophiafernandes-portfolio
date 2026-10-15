@@ -77,12 +77,15 @@
     "mensagem_ph": "Conte sobre a vaga, o projeto ou a dúvida...",
     "enviar": "Enviar mensagem",
     "enviando": "Enviando...",
-    "protecao": "Protegido por rate limit e honeypot.",
+    "protecao": "Protegido por reCAPTCHA e honeypot.",
     "sucesso": "Mensagem enviada. Obrigada pelo contato!",
     "erro": "Não consegui enviar agora. Tente de novo em instantes.",
     "erro_nome": "Informe seu nome.",
     "erro_email": "Informe um e-mail válido.",
-    "erro_mensagem": "Escreva uma mensagem."
+    "erro_mensagem": "Escreva uma mensagem.",
+    "erro_recaptcha": "Confirme que você não é um robô.",
+    "erro_recusado": "A verificação não foi aceita. Marque a caixa de novo e reenvie.",
+    "recaptcha_falhou": "Não consegui carregar a verificação. Recarregue a página."
   },
   "rodape": {
     "direitos": "© {{ano}} Sophia Fernandes",

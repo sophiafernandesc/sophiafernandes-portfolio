@@ -77,12 +77,15 @@
     "mensagem_ph": "Tell me about the role, the project or your question...",
     "enviar": "Send message",
     "enviando": "Sending...",
-    "protecao": "Protected by rate limit and honeypot.",
+    "protecao": "Protected by reCAPTCHA and honeypot.",
     "sucesso": "Message sent. Thanks for reaching out!",
     "erro": "Couldn't send it right now. Please try again shortly.",
     "erro_nome": "Please enter your name.",
     "erro_email": "Please enter a valid email.",
-    "erro_mensagem": "Please write a message."
+    "erro_mensagem": "Please write a message.",
+    "erro_recaptcha": "Please confirm you're not a robot.",
+    "erro_recusado": "The verification was rejected. Check the box again and resend.",
+    "recaptcha_falhou": "Couldn't load the verification. Please reload the page."
   },
   "rodape": {
     "direitos": "© {{ano}} Sophia Fernandes",

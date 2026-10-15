@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiMail, FiMessageCircle, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { LINKS } from '../config/links';
+import Recaptcha from '../components/Recaptcha';
+import useIdioma from '../hooks/useIdioma';
+import { useTema } from '../theme/TemaProvider';
 import { enviarContato } from '../services/contato';
 import estilos from './Contato.module.css';
 
@@ -9,8 +12,14 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function Contato() {
   const { t } = useTranslation();
-  const [estado, setEstado] = useState('ocioso'); // ocioso | enviando | ok | erro
+  const idioma = useIdioma();
+  const { tema } = useTema();
+  const [estado, setEstado] = useState('ocioso'); // ocioso | enviando | ok | erro | recusado
   const [erros, setErros] = useState({});
+  const [token, setToken] = useState(null);
+  // Mudar este número limpa a caixa: o token do reCAPTCHA é de uso único.
+  const [reiniciar, setReiniciar] = useState(0);
+  const [recaptchaQuebrou, setRecaptchaQuebrou] = useState(false);
 
   const canais = [
     { icone: FiMail, rotulo: 'E-mail', valor: LINKS.email, href: `mailto:${LINKS.email}` },
@@ -39,17 +48,25 @@ export default function Contato() {
     if (!nome) novosErros.nome = t('contato.erro_nome');
     if (!EMAIL_RE.test(email)) novosErros.email = t('contato.erro_email');
     if (!mensagem) novosErros.mensagem = t('contato.erro_mensagem');
+    // Se o widget nem carregou, não trava o formulário por uma caixa que a
+    // pessoa não tem como marcar: o servidor continua sendo quem decide.
+    if (!token && !recaptchaQuebrou) novosErros.recaptcha = t('contato.erro_recaptcha');
     setErros(novosErros);
     if (Object.keys(novosErros).length > 0) return;
 
     const formulario = evento.currentTarget;
     setEstado('enviando');
     try {
-      await enviarContato({ nome, email, mensagem });
+      await enviarContato({ nome, email, mensagem, tokenRecaptcha: token });
       setEstado('ok');
       formulario.reset();
-    } catch {
-      setEstado('erro');
+    } catch (falha) {
+      // 400 aqui só sobra para o reCAPTCHA: os campos já foram validados acima.
+      setEstado(falha?.status === 400 ? 'recusado' : 'erro');
+    } finally {
+      // O token morre no primeiro uso, tendo dado certo ou não.
+      setToken(null);
+      setReiniciar((n) => n + 1);
     }
   }
 
@@ -117,7 +134,20 @@ export default function Contato() {
               {erros.mensagem && <p id="erro-mensagem" className={estilos.erroCampo}>{erros.mensagem}</p>}
             </div>
 
-            {/* TODO Sprint 02: reCAPTCHA v2 acima do botão, validado no back-end */}
+            <div className={estilos.campo}>
+              {/* A key remonta o widget: o grecaptcha não troca tema nem
+                  idioma depois de desenhado. */}
+              <Recaptcha
+                key={`${idioma}-${tema}`}
+                aoMudarToken={setToken}
+                aoFalhar={() => setRecaptchaQuebrou(true)}
+                reiniciar={reiniciar}
+              />
+              {erros.recaptcha && <p className={estilos.erroCampo}>{erros.recaptcha}</p>}
+              {recaptchaQuebrou && (
+                <p className={estilos.erroCampo}>{t('contato.recaptcha_falhou')}</p>
+              )}
+            </div>
 
             <div className={estilos.acoes}>
               <button type="submit" className={estilos.botao} disabled={estado === 'enviando'}>
@@ -129,6 +159,7 @@ export default function Contato() {
             <p role="status" aria-live="polite" className={estilos.status}>
               {estado === 'ok' && t('contato.sucesso')}
               {estado === 'erro' && t('contato.erro')}
+              {estado === 'recusado' && t('contato.erro_recusado')}
             </p>
           </form>
         </section>
