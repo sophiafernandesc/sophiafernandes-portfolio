@@ -34,10 +34,103 @@
       "percentual": 7
     },
     {
-      "nome": null,
-      "quantas": 16,
-      "segundos": 23007,
-      "percentual": 20.5
+      "nome": "TypeScript",
+      "segundos": 5513,
+      "percentual": 4.9
+    },
+    {
+      "nome": "Other",
+      "segundos": 3028,
+      "percentual": 2.7
+    },
+    {
+      "nome": "Python",
+      "segundos": 2708,
+      "percentual": 2.4
+    },
+    {
+      "nome": "YAML",
+      "segundos": 2489,
+      "percentual": 2.2
+    },
+    {
+      "nome": "Java Properties",
+      "segundos": 1960,
+      "percentual": 1.8
+    },
+    {
+      "nome": "CSV",
+      "segundos": 1890,
+      "percentual": 1.7
+    },
+    {
+      "nome": "textmate",
+      "segundos": 1671,
+      "percentual": 1.5
+    },
+    {
+      "nome": "XML",
+      "segundos": 1077,
+      "percentual": 1
+    },
+    {
+      "nome": "Properties",
+      "segundos": 655,
+      "percentual": 0.6
+    },
+    {
+      "nome": "JSON",
+      "segundos": 585,
+      "percentual": 0.5
+    },
+    {
+      "nome": "Image (svg)",
+      "segundos": 563,
+      "percentual": 0.5
+    },
+    {
+      "nome": "Text",
+      "segundos": 522,
+      "percentual": 0.5
+    },
+    {
+      "nome": "CSV/TSV",
+      "segundos": 138,
+      "percentual": 0.1
+    },
+    {
+      "nome": "Docker",
+      "segundos": 129,
+      "percentual": 0.1
+    },
+    {
+      "nome": "Git Config",
+      "segundos": 69,
+      "percentual": 0.1
+    },
+    {
+      "nome": "IDEA_MODULE",
+      "segundos": 8,
+      "percentual": 0
+    }
+  ],
+  "categorias": [
+    {
+      "nome": "Coding",
+      "segundos": 37871,
+      "percentual": 33.8
+    },
+    {
+      "nome": "Writing Docs",
+      "segundos": 17452,
+      "percentual": 15.6
+    }
+  ],
+  "sistemas": [
+    {
+      "nome": "Mac",
+      "segundos": 111918,
+      "percentual": 100
     }
   ]
 }

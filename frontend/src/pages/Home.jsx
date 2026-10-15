@@ -61,7 +61,7 @@ export default function Home() {
       <section id="wakatime" className={estilos.secao}>
         <h2 className="rotulo">
           <span aria-hidden="true">01 - </span>{t('home.wakatime')}
-          <span aria-hidden="true"> · </span>{t('home.wakatime_periodo')}
+          <span aria-hidden="true"> · </span>WakaTime
         </h2>
         <GraficoLinguagens />
       </section>
@@ -78,6 +78,9 @@ export default function Home() {
           {t('home.ver_todos', { count: projetos.length })} →
         </Link>
       </section>
+
+
+
     </>
   );
 }

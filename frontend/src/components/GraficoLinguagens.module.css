@@ -1,64 +1,29 @@
-.bloco { display: flex; flex-direction: column; gap: var(--esp-6); }
-
-.lista {
-  display: flex;
-  flex-direction: column;
-  gap: var(--esp-3);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.linha {
-  display: grid;
-  grid-template-columns: var(--largura-rotulo-grafico) minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--esp-4);
-}
-
-.nome {
-  font-family: var(--fonte-mono);
-  font-size: var(--tam-corpo-peq);
-  color: var(--cor-texto-secundario);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.trilho {
-  block-size: var(--altura-barra-grafico);
-  background: var(--cor-superficie-elevada);
-  border-radius: var(--raio-peq);
-  overflow: hidden;
-}
-
-/* A ponta arredondada fica só na extremidade do dado; a base continua reta,
-   ancorada na linha de partida de todas as barras. */
-.barra,
-.barraDestaque {
-  display: block;
-  block-size: 100%;
-  border-start-end-radius: var(--raio-peq);
-  border-end-end-radius: var(--raio-peq);
-  transition: inline-size 240ms ease;
-}
-
-/* >= 3:1 sobre o fundo nos dois temas, conferido com o validador. */
-.barra { background: var(--cor-borda-controle); }
-.barraDestaque { background: var(--cor-acento); }
-
-.tempo {
-  font-family: var(--fonte-mono);
-  font-size: var(--tam-corpo-peq);
-  color: var(--cor-texto-apagado);
-  font-variant-numeric: tabular-nums;
-}
-
-.resumo { margin: 0; }
-
-@media (max-width: 600px) {
-  /* Sem espaço para três colunas: o nome e o tempo passam a dividir uma linha
-     acima da barra, que ocupa a largura toda. */
-  .linha { grid-template-columns: minmax(0, 1fr) auto; gap: var(--esp-2); }
-  .trilho { grid-column: 1 / -1; }
+.bloco { padding: var(--esp-8); background: var(--cor-superficie); border: 1px solid var(--cor-borda-forte); border-radius: var(--raio); }
+.cabecalho { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--esp-6); align-items: center; padding-bottom: var(--esp-6); border-bottom: 1px solid var(--cor-borda); }
+.rotulo { font-size: var(--tam-corpo-peq); margin-bottom: var(--esp-2); }
+.numero { font-family: var(--fonte-interface); font-size: var(--tam-h1); letter-spacing: -0.04em; line-height: 1.2; color: var(--cor-texto); margin: 0; }
+.contexto { max-width: var(--largura-leitura); }
+.contexto p { font-size: var(--tam-corpo-peq); color: var(--cor-texto-apagado); margin: 0 0 var(--esp-2); }
+.grupo { margin-top: var(--esp-8); }
+.grupo h3 { font-family: var(--fonte-mono); font-size: var(--tam-corpo-peq); color: var(--cor-texto-secundario); margin-bottom: var(--esp-4); }
+.grupo h3 span { color: var(--cor-texto-apagado); }
+.lista { display: flex; flex-direction: column; gap: var(--esp-3); list-style: none; padding: 0; margin: 0; }
+.linha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr) var(--largura-percentual-grafico); gap: var(--esp-4); align-items: center; }
+.nome { color: var(--cor-texto); font-size: var(--tam-corpo-peq); overflow-wrap: anywhere; }
+.trilho { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); gap: var(--espaco-segmento-grafico); height: var(--altura-barra-grafico); }
+.segmento, .segmentoPreenchido, .segmentoDestaque { border-radius: var(--raio-segmento-grafico); background: var(--cor-superficie-elevada); }
+.segmentoPreenchido { background: var(--cor-borda-controle); }
+.segmentoDestaque { background: var(--cor-acento); }
+.tempo, .percentual { text-align: right; font-family: var(--fonte-mono); font-size: var(--tam-corpo-peq); font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--cor-texto-secundario); }
+.percentual { font-size: var(--tam-rotulo); color: var(--cor-texto-apagado); }
+.adicionais { margin-top: var(--esp-6); color: var(--cor-texto-apagado); font-size: var(--tam-corpo-peq); }
+.adicionais summary { cursor: pointer; padding: var(--esp-3) 0; }
+.adicionais .lista { margin-top: var(--esp-3); }
+@media (max-width: 700px) {
+  .bloco { padding: var(--esp-4); }
+  .linha { grid-template-columns: minmax(0, 1fr) auto auto; gap: var(--esp-2); }
+  .nome { grid-column: 1; grid-row: 1; }
+  .tempo { grid-column: 2; grid-row: 1; }
+  .percentual { grid-column: 3; grid-row: 1; }
+  .trilho { grid-column: 1 / -1; grid-row: 2; }
 }

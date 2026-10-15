@@ -18,14 +18,12 @@
     "papel": "Engenharia de Software",
     "local": "Belo Horizonte, Brasil",
     "resumo": "Desenvolvo back-end com Java e Spring Boot, com origem em eletrônica e sistemas embarcados. Na Stellantis, validei infotainment e conectividade automotiva. Nos meus projetos, construo o caminho inteiro do dado: do barramento CAN à tela do aplicativo.",
-    "foto_alt": "Sophia Fernandes em uma conferência de tecnologia, com crachá do evento",
+    "foto_alt": "Retrato de Sophia Fernandes",
     "curriculo": "Currículo",
     "contato": "Contato",
-    "wakatime": "Wakatime",
-    "wakatime_periodo": "Desde o início",
+    "wakatime": "Atividade de código",
     "wakatime_duracao": "{{h}}h {{min}}min",
     "wakatime_outras": "Outras {{quantas}}",
-    "wakatime_resumo": "{{total}} no total · {{media}} por dia · atualizado em {{data}}",
     "wakatime_vazio": "Estatísticas indisponíveis no momento.",
     "projetos": "Projetos",
     "projetos_sub": "Seleção",
@@ -36,7 +34,25 @@
       "do barramento CAN à nuvem",
       "do firmware à API REST",
       "do sensor à tela do app"
-    ]
+    ],
+    "wakatime_registradas": "registradas até {{data}}",
+    "wakatime_total_nota": "Total registrado pelo WakaTime, incluindo documentação e configuração.",
+    "wakatime_linguagens": "Linguagens e estilos",
+    "wakatime_outros_registros": "Documentação, configuração e outros registros",
+    "wakatime_total": "Tempo registrado",
+    "wakatime_categorias_titulo": "Categorias",
+    "wakatime_sistemas": "Sistemas operacionais",
+    "wakatime_mais_linguagens": "Mais linguagens e estilos",
+    "wakatime_categorias": {
+      "programando": "Programando",
+      "documentando": "Escrevendo documentação",
+      "testando": "Escrevendo testes",
+      "depurando": "Depurando",
+      "navegando": "Navegando",
+      "projetando": "Projetando",
+      "revisando": "Revisando código",
+      "executando_testes": "Executando testes"
+    }
   },
   "sobre": {
     "titulo": "Sobre mim",

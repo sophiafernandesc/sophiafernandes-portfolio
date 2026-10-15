@@ -1,0 +1,11 @@
+# Nada daqui deve entrar na imagem. O local.properties em especial: ele carrega
+# as credenciais de desenvolvimento, e no Render os valores vem do painel.
+local.properties
+.env
+.env.local
+
+target/
+.git/
+.idea/
+*.iml
+HELP.md
