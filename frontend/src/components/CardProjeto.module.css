@@ -12,6 +12,51 @@
 .card:hover, .card:focus-within { border-color: var(--cor-borda-forte); }
 .capa { min-width: 0; border-radius: var(--raio-peq); overflow: hidden; }
 .capa img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+
+/* Moldura de janela para capas que sao captura de tela. A proporcao 16/9 fica
+   na moldura inteira; a imagem ocupa o que sobra abaixo da barra e usa 'cover'
+   ancorado no topo, porque o alto da pagina e o que identifica o projeto. */
+.janela {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 16 / 9;
+  background: var(--cor-superficie-elevada);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-peq);
+  overflow: hidden;
+}
+
+.barraJanela {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-1);
+  flex-shrink: 0;
+  block-size: var(--altura-barra-janela);
+  padding-inline: var(--esp-2);
+  background: var(--cor-superficie);
+  border-block-end: 1px solid var(--cor-borda);
+}
+
+.barraJanela span {
+  inline-size: var(--diametro-ponto-janela);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.pontoFechar { background: var(--cor-janela-fechar); }
+.pontoMinimizar { background: var(--cor-janela-minimizar); }
+.pontoExpandir { background: var(--cor-janela-expandir); }
+
+/* Dentro da moldura a imagem perde a proporcao propria: quem manda e a moldura. */
+.janela img {
+  flex: 1;
+  min-block-size: 0;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: top;
+}
 .capaReservada {
   display: flex;
   flex-direction: column;
