@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Segredos locais ###
+# Credenciais de desenvolvimento. Carregado por spring.config.import
+# no application.properties, e NUNCA versionado.
+local.properties
+.env
+.env.local
