@@ -8,7 +8,7 @@ import estilos from './Projetos.module.css';
 export default function Projetos() {
   const { t } = useTranslation();
   const idioma = useIdioma();
-  const projetos = getProjetos(idioma);
+  const projetos = [...getProjetos(idioma)].reverse();
   const tags = getTags(idioma);
   const [filtro, setFiltro] = useState(null);
 
