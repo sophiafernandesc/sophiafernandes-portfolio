@@ -64,7 +64,7 @@
   },
   "projetos": {
     "titulo": "Projects",
-    "subtitulo": "{{count}} projects · oldest to most recent",
+    "subtitulo": "{{count}} projects · newest to oldest",
     "filtro_todos": "All",
     "ver_projeto": "View project",
     "repositorio": "GitHub",

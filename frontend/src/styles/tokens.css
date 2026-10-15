@@ -33,6 +33,14 @@
      secundario, porque vive sobre superficie elevada e precisa se destacar. */
   --cor-texto-controle: #cec9dc;
 
+  /* Sinaleira da moldura de janela nas capas que sao captura de tela. Sao as
+     cores literais do macOS: a moldura e uma citacao visual, nao um acento do
+     sistema, entao nao disputam com a regra de um acento por tela. Valem nos
+     dois temas, porque a janela real tambem nao muda de cor. */
+  --cor-janela-fechar: #ff5f57;
+  --cor-janela-minimizar: #febc2e;
+  --cor-janela-expandir: #28c840;
+
   /* Cores de papel unico, antes fixas dentro dos CSS Modules */
   --cor-chip-ativo: #2e2744;     /* fundo do filtro selecionado */
   --cor-campo-fundo: #191720;    /* fundo de input e textarea */
@@ -103,6 +111,8 @@
   --altura-foto-home: 20rem;
   --diametro-foto-movel: 11rem; /* foto redonda no celular */
   --alvo-toque: 2.75rem;        /* 44px: minimo da Apple HIG para o dedo */
+  --altura-barra-janela: 1.5rem;   /* barra de titulo da moldura de captura */
+  --diametro-ponto-janela: 0.5rem; /* cada bolinha da sinaleira */
   --altura-recaptcha: 4.875rem;     /* iframe do reCAPTCHA, 78px */
   --altura-barra-grafico: 0.625rem; /* barra do gráfico de linguagens */
   --espaco-segmento-grafico: 0.1875rem;

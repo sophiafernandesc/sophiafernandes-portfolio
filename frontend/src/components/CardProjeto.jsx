@@ -6,7 +6,7 @@ import estilos from './CardProjeto.module.css';
 
 export default function CardProjeto({ projeto }) {
   const { t } = useTranslation();
-  const { slug, titulo, ano, ordem, stack = [], repo, capa, Corpo } = projeto;
+  const { slug, titulo, ano, ordem, stack = [], repo, capa, moldura, Corpo } = projeto;
 
   /* Enquanto nem todo projeto tem capa, o arquivo declarado no frontmatter pode
      não existir. Sem isto o navegador desenha o ícone de imagem quebrada, que
@@ -15,12 +15,29 @@ export default function CardProjeto({ projeto }) {
   const [capaFalhou, setCapaFalhou] = useState(false);
   const mostrarCapa = capa && !capaFalhou;
 
+  /* Capa que é captura de tela ganha moldura de janela: sem ela a imagem
+     flutua solta e não se lê como "isto é um site". A moldura é CSS, não está
+     desenhada no arquivo, então fica nítida em qualquer tela e acompanha os
+     dois temas. Declarada com `moldura: mac` no frontmatter. */
+  const imagem = (
+    <img src={capa} alt={t('projetos.capa_alt', { titulo })} loading="lazy"
+      width="640" height="360" onError={() => setCapaFalhou(true)} />
+  );
+
   return (
     <article className={estilos.card}>
       <div className={estilos.capa}>
-        {mostrarCapa ? (
-          <img src={capa} alt={t('projetos.capa_alt', { titulo })} loading="lazy"
-            width="640" height="360" onError={() => setCapaFalhou(true)} />
+        {mostrarCapa && moldura === 'mac' ? (
+          <div className={estilos.janela}>
+            <div className={estilos.barraJanela} aria-hidden="true">
+              <span className={estilos.pontoFechar} />
+              <span className={estilos.pontoMinimizar} />
+              <span className={estilos.pontoExpandir} />
+            </div>
+            {imagem}
+          </div>
+        ) : mostrarCapa ? (
+          imagem
         ) : (
           <div className={estilos.capaReservada} aria-hidden="true">
             <span className={estilos.monograma}>{titulo.slice(0, 2).toUpperCase()}</span>
