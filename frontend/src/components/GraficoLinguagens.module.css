@@ -1,0 +1,64 @@
+.bloco { display: flex; flex-direction: column; gap: var(--esp-6); }
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: var(--largura-rotulo-grafico) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--esp-4);
+}
+
+.nome {
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-corpo-peq);
+  color: var(--cor-texto-secundario);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trilho {
+  block-size: var(--altura-barra-grafico);
+  background: var(--cor-superficie-elevada);
+  border-radius: var(--raio-peq);
+  overflow: hidden;
+}
+
+/* A ponta arredondada fica só na extremidade do dado; a base continua reta,
+   ancorada na linha de partida de todas as barras. */
+.barra,
+.barraDestaque {
+  display: block;
+  block-size: 100%;
+  border-start-end-radius: var(--raio-peq);
+  border-end-end-radius: var(--raio-peq);
+  transition: inline-size 240ms ease;
+}
+
+/* >= 3:1 sobre o fundo nos dois temas, conferido com o validador. */
+.barra { background: var(--cor-borda-controle); }
+.barraDestaque { background: var(--cor-acento); }
+
+.tempo {
+  font-family: var(--fonte-mono);
+  font-size: var(--tam-corpo-peq);
+  color: var(--cor-texto-apagado);
+  font-variant-numeric: tabular-nums;
+}
+
+.resumo { margin: 0; }
+
+@media (max-width: 600px) {
+  /* Sem espaço para três colunas: o nome e o tempo passam a dividir uma linha
+     acima da barra, que ocupa a largura toda. */
+  .linha { grid-template-columns: minmax(0, 1fr) auto; gap: var(--esp-2); }
+  .trilho { grid-column: 1 / -1; }
+}

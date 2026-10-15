@@ -1,15 +1,38 @@
 ---
 slug: programacao-modular
-titulo: Modular Programming
+titulo: ReservasJá
 ano: "2026/1"
 ordem: 4
-stack: ["Spring Boot", "JavaScript", "HTML", "CSS"]
-repo: 
-capa: /img/projetos/programacao-modular.png
-tags: ["Java", "Web"]
+stack: ["Java", "Spring Boot", "MySQL", "JavaScript"]
+repo: https://github.com/Programacao-Modular-PUC/trabalho-pratico-grupo1
+capa: /img/projetos/programacao-modular.webp
+tags: ["Java", "Web", "Design Patterns"]
 destaque: false
 ---
 
-Coursework project for the Modular Programming class, running locally. Institutional repository, with teammates credited in the description.
+Lodging management system for the Maraú Peninsula, organising room rentals in
+local homes. Built as a team project for the Modular Programming course, with a
+Spring Boot REST API on a layered architecture, MySQL persistence and a
+JavaScript, HTML and CSS interface.
 
-TODO: describe the scope and my role in the team.
+The course required design patterns applied to a real problem, and the system
+uses three: **Singleton** for global configuration, **Strategy** for the pricing
+rules (high and low season, holiday, promotional and returning guest) and
+**Observer** for notifications.
+
+## What I built
+
+- **Notification layer with Observer.** The `NotificacaoObserver` interface, the
+  `AluguelEvent` base event, the booking lifecycle events and the
+  `NotificacaoDispatcher`, wired into `AluguelService`. The email, SMS, WhatsApp
+  and in-app channels receive events without the service knowing any of them.
+- **Error handling.** Custom exceptions and a global handler, so the API answers
+  business errors with its own status and message instead of a stack trace.
+- **Booking business rules.** Validation of dates, room availability and
+  capacity per accommodation type.
+- **Authentication.** `POST /auth/login` endpoint with `CredenciaisInvalidasException`.
+- **Front-end and API integration.** Restructured the front end into `http.js`,
+  `session.js` and `env.js`, and connected the login, dashboard and guest pages
+  to the real API, including sign-up. Fixed circular serialisation in
+  `Residencia` and configured CORS.
+- **Tests.** Coverage of the notification flows and the booking services.

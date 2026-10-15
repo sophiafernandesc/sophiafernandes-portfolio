@@ -10,6 +10,7 @@ const ROTAS = [
   { para: '/sobre', chave: 'menu.sobre' },
   { para: '/projetos', chave: 'menu.projetos' },
   { para: '/experiencias', chave: 'menu.experiencias' },
+  { para: '/curriculo', chave: 'menu.curriculo' },
   { para: '/contato', chave: 'menu.contato' },
 ];
 

@@ -19,6 +19,7 @@
   --cor-superficie-elevada: #1f1b29;
   --cor-borda: #26222f;
   --cor-borda-forte: #3a3348;
+  --cor-borda-controle: #706686; /* >= 3:1 sobre campo e superficie elevada */
   /* Clareado de #7c5ce6: com o texto escuro de --cor-acento-contraste
      aquele valor dava 4,01:1, abaixo do minimo de 4,5. Agora da 5,19:1. */
   --cor-acento-forte: #8f74ea;
@@ -52,6 +53,7 @@
   /* A borda forte contorna input e textarea. Sobre branco ela precisa de 3:1
      (WCAG 1.4.11): e o contorno que identifica o campo. #9b8fb4 da 3,01:1. */
   --cor-borda-forte: #9b8fb4;
+  --cor-borda-controle: #9285ad; /* >= 3:1 sobre campo e superficie elevada */
   --cor-acento-forte: #6d4ae0;
   --cor-acento: #5b3cc4;
   --cor-acento-contraste: #ffffff;
@@ -96,12 +98,32 @@
   --esp-16: 4rem;
 
   /* Layout */
+  --altura-esp32: 26rem;
+  --largura-rotulo-sobre: 5rem;
+  --altura-foto-home: 20rem;
+  --diametro-foto-movel: 11rem; /* foto redonda no celular */
+  --alvo-toque: 2.75rem;        /* 44px: minimo da Apple HIG para o dedo */
+  --altura-recaptcha: 4.875rem;     /* iframe do reCAPTCHA, 78px */
+  --altura-barra-grafico: 0.625rem; /* barra do gráfico de linguagens */
+  --largura-rotulo-grafico: 8.5rem;  /* coluna do nome da linguagem */
+  --altura-texto-digitando: 1.75rem;
   --largura-maxima: 1440px;
   --gutter: 4rem;
   --largura-leitura: 46rem; /* limite de linha para texto corrido */
 
   --raio: 10px;
   --raio-peq: 6px;
+}
+
+/* Degrau intermediario. Entre 900px e ~1000px o hero ainda tem duas colunas e
+   a coluna de texto cai para ~385px, estreita demais para "Sophia Fernandes"
+   em 54px: o nome quebrava em duas linhas. O gutter de 4rem tambem desperdica
+   muita largura em tablet. */
+@media (max-width: 1100px) {
+  :root {
+    --tam-display: 2.5rem;
+    --gutter: 2rem;
+  }
 }
 
 @media (max-width: 768px) {

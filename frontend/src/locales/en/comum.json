@@ -11,30 +11,40 @@
     "tema": "Theme",
     "tema_claro": "Switch to light theme",
     "tema_escuro": "Switch to dark theme",
-    "pular": "Skip to content"
+    "pular": "Skip to content",
+    "curriculo": "Resume"
   },
   "home": {
     "papel": "Software Engineering",
     "local": "Belo Horizonte, Brazil",
-    "resumo": "I build software with roots in electronics and embedded systems. Currently working on back-end with Java and Spring Boot, after a year and four months validating infotainment and connectivity at Stellantis.",
-    "foto_alt": "Photo of Sophia Fernandes",
+    "resumo": "I build back-end with Java and Spring Boot, with roots in electronics and embedded systems. At Stellantis, I validated automotive infotainment and connectivity. In my own projects, I build the whole path the data takes: from the CAN bus to the app screen.",
+    "foto_alt": "Sophia Fernandes at a technology conference, wearing the event badge",
     "curriculo": "Resume",
     "contato": "Contact",
     "wakatime": "Wakatime",
-    "wakatime_periodo": "Last 4 weeks",
+    "wakatime_periodo": "All time",
+    "wakatime_duracao": "{{h}}h {{min}}m",
+    "wakatime_outras": "{{quantas}} others",
+    "wakatime_resumo": "{{total}} total · {{media}} per day · updated {{data}}",
+    "wakatime_vazio": "Stats unavailable right now.",
     "projetos": "Projects",
     "projetos_sub": "Selection",
     "ver_todos": "See all {{count}} projects",
-    "cracha_legenda": "Static badge. The 3D version, hanging from the lanyard with physics, arrives in Sprint 03."
+    "resumo2": "I like problems that require understanding the whole system before the first line of code. That was true debugging ECUs, where an intermittent failure only yields to method, and it is true in back-end work, where the wrong model charges you six months later. The timeline below starts with a quadruped robot in C++ and ends in full-stack platforms.",
+    "especialidades": [
+      "from electronics to back-end",
+      "from the CAN bus to the cloud",
+      "from firmware to REST API",
+      "from the sensor to the screen"
+    ]
   },
   "sobre": {
     "titulo": "About me",
-    "subtitulo": "Full content in Portuguese and English · switch at the top",
     "formacao": "Education",
     "cursos": "Courses",
-    "esp32_reservado": "3D model of the ESP32 - drag to rotate",
-    "esp32_legenda": "Fig. 1 - where it all started.",
-    "esp32_credito": "CC BY model, credit to the author."
+    "esp32_alt": "ESP32 DOIT DEVKIT V1 board with a metal module and two rows of pins",
+    "esp32_erro": "The 3D model could not load. Showing the board image.",
+    "chamada": "From electronics to back-end."
   },
   "projetos": {
     "titulo": "Projects",
@@ -44,7 +54,9 @@
     "repositorio": "GitHub",
     "capa_alt": "Screenshot of the {{titulo}} project",
     "vazio": "No projects match this filter.",
-    "capa_reservada": "project photo or GIF"
+    "capa_reservada": "project photo or GIF",
+    "mais_tecnologias_one": "+{{count}} technology",
+    "mais_tecnologias_other": "+{{count}} technologies"
   },
   "experiencias": {
     "titulo": "Experience",
@@ -65,15 +77,20 @@
     "mensagem_ph": "Tell me about the role, the project or your question...",
     "enviar": "Send message",
     "enviando": "Sending...",
-    "protecao": "Protected by rate limit and honeypot.",
+    "protecao": "Protected by reCAPTCHA and honeypot.",
     "sucesso": "Message sent. Thanks for reaching out!",
     "erro": "Couldn't send it right now. Please try again shortly.",
     "erro_nome": "Please enter your name.",
     "erro_email": "Please enter a valid email.",
-    "erro_mensagem": "Please write a message."
+    "erro_mensagem": "Please write a message.",
+    "erro_recaptcha": "Please confirm you're not a robot.",
+    "erro_recusado": "The verification was rejected. Check the box again and resend.",
+    "recaptcha_falhou": "Couldn't load the verification. Please reload the page."
   },
   "rodape": {
-    "direitos": "© {{ano}} Sophia Fernandes"
+    "direitos": "© {{ano}} Sophia Fernandes",
+    "modelo_esp32": "ESP32 model by",
+    "esp32_derivada": "Static image rendered from the model."
   },
   "erro": {
     "nao_encontrado": "Page not found",
@@ -95,16 +112,19 @@
       },
       {
         "chave": "Now",
-        "valor": "Intern at Stellantis, Electrical Lab"
+        "valor": "WebTech outreach project, PUC Minas"
       },
       {
         "chave": "Languages",
         "valor": "Native Portuguese, fluent English"
-      },
-      {
-        "chave": "Status",
-        "valor": "Open to opportunities"
       }
     ]
+  },
+  "curriculo": {
+    "subtitulo": "Experience, education and skills.",
+    "baixar": "Download resume (EN)",
+    "abrir": "Open PDF",
+    "pendente": "Updated PDF in preparation.",
+    "contatos": "Professional contacts"
   }
 }

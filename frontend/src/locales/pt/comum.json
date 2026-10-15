@@ -11,30 +11,40 @@
     "tema": "Tema",
     "tema_claro": "Ativar tema claro",
     "tema_escuro": "Ativar tema escuro",
-    "pular": "Pular para o conteúdo"
+    "pular": "Pular para o conteúdo",
+    "curriculo": "Currículo"
   },
   "home": {
     "papel": "Engenharia de Software",
     "local": "Belo Horizonte, Brasil",
-    "resumo": "Desenvolvo software com origem em eletrônica e sistemas embarcados. Hoje em back-end com Java e Spring Boot, depois de um ano e quatro meses validando infotainment e conectividade na Stellantis.",
-    "foto_alt": "Foto de Sophia Fernandes",
+    "resumo": "Desenvolvo back-end com Java e Spring Boot, com origem em eletrônica e sistemas embarcados. Na Stellantis, validei infotainment e conectividade automotiva. Nos meus projetos, construo o caminho inteiro do dado: do barramento CAN à tela do aplicativo.",
+    "foto_alt": "Sophia Fernandes em uma conferência de tecnologia, com crachá do evento",
     "curriculo": "Currículo",
     "contato": "Contato",
     "wakatime": "Wakatime",
-    "wakatime_periodo": "Últimas 4 semanas",
+    "wakatime_periodo": "Desde o início",
+    "wakatime_duracao": "{{h}}h {{min}}min",
+    "wakatime_outras": "Outras {{quantas}}",
+    "wakatime_resumo": "{{total}} no total · {{media}} por dia · atualizado em {{data}}",
+    "wakatime_vazio": "Estatísticas indisponíveis no momento.",
     "projetos": "Projetos",
     "projetos_sub": "Seleção",
     "ver_todos": "Ver todos os {{count}} projetos",
-    "cracha_legenda": "Crachá estático. A versão 3D, pendurada no cordão e com física, entra na Sprint 03."
+    "resumo2": "Gosto de problema que exige entender o sistema inteiro antes da primeira linha de código. Foi assim depurando ECUs, onde falha intermitente só cede a método, e é assim no back-end, onde modelagem errada cobra o preço seis meses depois. A linha do tempo abaixo começa num robô quadrúpede em C++ e chega em plataformas full-stack.",
+    "especialidades": [
+      "da eletrônica ao back-end",
+      "do barramento CAN à nuvem",
+      "do firmware à API REST",
+      "do sensor à tela do app"
+    ]
   },
   "sobre": {
     "titulo": "Sobre mim",
-    "subtitulo": "Conteúdo completo em português e inglês · alterne no topo",
     "formacao": "Formação",
     "cursos": "Cursos",
-    "esp32_reservado": "modelo 3D da ESP32 - arraste para girar",
-    "esp32_legenda": "Fig. 1 - onde tudo começou.",
-    "esp32_credito": "Modelo CC BY, crédito ao autor."
+    "esp32_alt": "Placa ESP32 DOIT DEVKIT V1 com módulo metálico e duas fileiras de pinos",
+    "esp32_erro": "Não foi possível carregar o 3D. Exibindo a imagem da placa.",
+    "chamada": "Da eletrônica ao back-end."
   },
   "projetos": {
     "titulo": "Projetos",
@@ -44,7 +54,9 @@
     "repositorio": "GitHub",
     "capa_alt": "Captura do projeto {{titulo}}",
     "vazio": "Nenhum projeto com esse filtro.",
-    "capa_reservada": "foto ou GIF do projeto"
+    "capa_reservada": "foto ou GIF do projeto",
+    "mais_tecnologias_one": "+{{count}} tecnologia",
+    "mais_tecnologias_other": "+{{count}} tecnologias"
   },
   "experiencias": {
     "titulo": "Experiências",
@@ -65,15 +77,20 @@
     "mensagem_ph": "Conte sobre a vaga, o projeto ou a dúvida...",
     "enviar": "Enviar mensagem",
     "enviando": "Enviando...",
-    "protecao": "Protegido por rate limit e honeypot.",
+    "protecao": "Protegido por reCAPTCHA e honeypot.",
     "sucesso": "Mensagem enviada. Obrigada pelo contato!",
     "erro": "Não consegui enviar agora. Tente de novo em instantes.",
     "erro_nome": "Informe seu nome.",
     "erro_email": "Informe um e-mail válido.",
-    "erro_mensagem": "Escreva uma mensagem."
+    "erro_mensagem": "Escreva uma mensagem.",
+    "erro_recaptcha": "Confirme que você não é um robô.",
+    "erro_recusado": "A verificação não foi aceita. Marque a caixa de novo e reenvie.",
+    "recaptcha_falhou": "Não consegui carregar a verificação. Recarregue a página."
   },
   "rodape": {
-    "direitos": "© {{ano}} Sophia Fernandes"
+    "direitos": "© {{ano}} Sophia Fernandes",
+    "modelo_esp32": "Modelo ESP32 por",
+    "esp32_derivada": "Imagem estática renderizada a partir do modelo."
   },
   "erro": {
     "nao_encontrado": "Página não encontrada",
@@ -95,16 +112,19 @@
       },
       {
         "chave": "Agora",
-        "valor": "Estágio na Stellantis, Exp. Elétrica"
+        "valor": "Extensão WebTech, PUC Minas"
       },
       {
         "chave": "Idiomas",
         "valor": "Português nativo, inglês fluente"
-      },
-      {
-        "chave": "Status",
-        "valor": "Aberta a oportunidades"
       }
     ]
+  },
+  "curriculo": {
+    "subtitulo": "Trajetória, formação e competências.",
+    "baixar": "Baixar currículo (PT)",
+    "abrir": "Abrir PDF",
+    "pendente": "PDF atualizado em preparação.",
+    "contatos": "Contatos profissionais"
   }
 }

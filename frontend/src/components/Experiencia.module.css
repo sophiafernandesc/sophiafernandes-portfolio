@@ -1,0 +1,26 @@
+.experiencia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 5fr);
+  gap: var(--esp-8);
+  padding: var(--esp-8) 0 var(--esp-12);
+  border-top: 1px solid var(--cor-borda);
+}
+.periodo { font-family: var(--fonte-mono); font-size: var(--tam-corpo-peq); color: var(--cor-texto-apagado); margin: 0; }
+.detalhes { min-width: 0; }
+.cabecalho { margin-bottom: var(--esp-6); }
+.cabecalho h2 { font-size: var(--tam-h2); margin-bottom: var(--esp-2); }
+.cargo { color: var(--cor-texto); margin: 0 0 var(--esp-2); }
+.contexto { font-size: var(--tam-corpo-peq); color: var(--cor-texto-apagado); margin: 0; }
+.conteudo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--esp-8);
+  align-items: start;
+}
+.conteudo > ul { padding-left: var(--esp-4); margin: 0; }
+.conteudo li { color: var(--cor-texto-secundario); margin-bottom: var(--esp-4); line-height: 1.75; }
+.conteudo > figure { margin: 0; }
+@media (max-width: 1100px) { .conteudo { grid-template-columns: 1fr; } }
+@media (max-width: 720px) {
+  .experiencia { grid-template-columns: 1fr; gap: var(--esp-4); }
+}

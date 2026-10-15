@@ -1,6 +1,6 @@
 .hero {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 340px minmax(0, 1fr);
   gap: var(--esp-12);
   align-items: start;
   margin-bottom: var(--esp-12);
@@ -74,7 +74,7 @@
 }
 
 .botao {
-  border: 1px solid var(--cor-borda-forte);
+  border: 1px solid var(--cor-borda-controle);
   color: var(--cor-texto-controle);
 }
 
@@ -105,4 +105,27 @@
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: var(--esp-6); }
+
+  /* No celular a leitura comeca pelo nome, nao pela foto. Os dois wrappers
+     viram 'display: contents' para que nome, foto e indice passem a ser itens
+     diretos do grid e possam ser reordenados; sem isso a foto fica presa na
+     mesma caixa do indice e so daria para mover as duas juntas. */
+  .hero > div { display: contents; }
+
+  .nome { order: 1; }
+  .papel { order: 2; }
+  .hero figure { order: 3; }   /* o cartao da foto */
+  .digitando { order: 4; }
+  .resumo { order: 5; }
+  .acoes { order: 6; }
+  .indice { order: 7; gap: 0; }  /* atalhos ficam colados nas secoes que abrem */
+
+  /* O texto tem 11px e o link ficava com ~15px de altura, abaixo do minimo de
+     24px da WCAG 2.2. A altura minima cresce o alvo do dedo sem mexer na
+     tipografia; o gap sai porque a propria altura ja separa as linhas. */
+  .indice a {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--alvo-toque);
+  }
 }

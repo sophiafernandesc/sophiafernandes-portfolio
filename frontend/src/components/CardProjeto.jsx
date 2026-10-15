@@ -18,27 +18,15 @@ export default function CardProjeto({ projeto }) {
   return (
     <article className={estilos.card}>
       <div className={estilos.capa}>
-        {/* A moldura de janela vale para capa e para espaço reservado: dá
-            enquadramento comum a material de tipos diferentes (captura de
-            tela, card de título, foto de hardware) e mantém a coluna com o
-            mesmo ritmo, com ou sem imagem. */}
-        <div className={estilos.janela}>
-          <span className={estilos.barra} aria-hidden="true">
-            <span className={estilos.ponto} />
-            <span className={estilos.ponto} />
-            <span className={estilos.ponto} />
-          </span>
-          {mostrarCapa ? (
-            <img
-              src={capa}
-              alt={t('projetos.capa_alt', { titulo })}
-              loading="lazy"
-              onError={() => setCapaFalhou(true)}
-            />
-          ) : (
-            <span className={estilos.capaReservada}>{t('projetos.capa_reservada')}</span>
-          )}
-        </div>
+        {mostrarCapa ? (
+          <img src={capa} alt={t('projetos.capa_alt', { titulo })} loading="lazy"
+            width="640" height="360" onError={() => setCapaFalhou(true)} />
+        ) : (
+          <div className={estilos.capaReservada} aria-hidden="true">
+            <span className={estilos.monograma}>{titulo.slice(0, 2).toUpperCase()}</span>
+            <span>{titulo}</span>
+          </div>
+        )}
       </div>
 
       <div className={estilos.texto}>
@@ -55,9 +43,10 @@ export default function CardProjeto({ projeto }) {
 
         {stack.length > 0 && (
           <ul className={estilos.stack}>
-            {stack.map((tec) => (
+            {stack.slice(0, 4).map((tec) => (
               <li key={tec} className={estilos.chip}>{tec}</li>
             ))}
+            {stack.length > 4 && <li className={estilos.mais}>{t('projetos.mais_tecnologias', { count: stack.length - 4 })}</li>}
           </ul>
         )}
 
@@ -66,7 +55,7 @@ export default function CardProjeto({ projeto }) {
             {t('projetos.ver_projeto')} <FiArrowRight aria-hidden="true" />
           </Link>
           {repo && (
-            <a href={repo} target="_blank" rel="noopener noreferrer">
+            <a className={estilos.repositorio} href={repo} target="_blank" rel="noopener noreferrer">
               {t('projetos.repositorio')} <FiExternalLink aria-hidden="true" />
             </a>
           )}

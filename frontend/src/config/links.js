@@ -9,4 +9,5 @@ export const LINKS = {
   github: 'https://github.com/sophiafernandesc',
   githubTexto: '/sophiafernandesc',
   curriculo: '/curriculo-sophia-fernandes.pdf',
+  curriculoEn: '/resume-sophia-fernandes-en.pdf',
 };

@@ -1,0 +1,43 @@
+{
+  "atualizadoEm": "2026-10-15",
+  "totalSegundos": 108890,
+  "mediaDiariaSegundos": 3630,
+  "linguagens": [
+    {
+      "nome": "Markdown",
+      "segundos": 29678,
+      "percentual": 26.5
+    },
+    {
+      "nome": "Java",
+      "segundos": 19198,
+      "percentual": 17.1
+    },
+    {
+      "nome": "HTML",
+      "segundos": 12558,
+      "percentual": 11.2
+    },
+    {
+      "nome": "CSS",
+      "segundos": 10097,
+      "percentual": 9
+    },
+    {
+      "nome": "GitIgnore file",
+      "segundos": 9536,
+      "percentual": 8.5
+    },
+    {
+      "nome": "JavaScript",
+      "segundos": 7844,
+      "percentual": 7
+    },
+    {
+      "nome": null,
+      "quantas": 16,
+      "segundos": 23007,
+      "percentual": 20.5
+    }
+  ]
+}

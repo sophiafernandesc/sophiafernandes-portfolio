@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { FiFileText, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
 import CardProjeto from '../components/CardProjeto';
 import Cracha from '../components/Cracha';
-import SecaoVazia from '../components/SecaoVazia';
+import TextoDigitando from '../components/TextoDigitando';
+import GraficoLinguagens from '../components/GraficoLinguagens';
 import useIdioma from '../hooks/useIdioma';
 import { getProjetos } from '../conteudo/projetos';
 import { LINKS } from '../config/links';
@@ -34,12 +35,16 @@ export default function Home() {
             <span aria-hidden="true"> / </span>
             <span className={estilos.local}>{t('home.local')}</span>
           </p>
+          <div className={estilos.digitando}>
+            <TextoDigitando key={idioma} frases={t('home.especialidades', { returnObjects: true })} />
+          </div>
           <p className={estilos.resumo}>{t('home.resumo')}</p>
+          <p className={estilos.resumo}>{t('home.resumo2')}</p>
 
           <div className={estilos.acoes}>
-            <a className={estilos.botaoPrimario} href={LINKS.curriculo} target="_blank" rel="noopener noreferrer">
+            <Link className={estilos.botaoPrimario} to="/curriculo">
               <FiFileText aria-hidden="true" /> {t('home.curriculo')}
-            </a>
+            </Link>
             <Link className={estilos.botao} to="/contato">
               <FiMail aria-hidden="true" /> {t('home.contato')}
             </Link>
@@ -58,7 +63,7 @@ export default function Home() {
           <span aria-hidden="true">01 - </span>{t('home.wakatime')}
           <span aria-hidden="true"> · </span>{t('home.wakatime_periodo')}
         </h2>
-        <SecaoVazia altura={200}>gráfico de barras - horas por linguagem</SecaoVazia>
+        <GraficoLinguagens />
       </section>
 
       <section id="projetos" className={estilos.secao}>
