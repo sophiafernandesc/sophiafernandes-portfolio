@@ -6,7 +6,7 @@ export default function Cracha() {
   return (
     <figure className={estilos.cartao}>
       <img className={estilos.foto} src="/img/foto-cracha.webp"
-        alt={t('home.foto_alt')} width="447" height="559" />
+        alt={t('home.foto_alt')} width="700" height="876" />
     </figure>
   );
 }
