@@ -4,6 +4,23 @@ import { useTranslation } from 'react-i18next';
 import estilos from './FiguraEsp32.module.css';
 
 const ORBITA_INICIAL = '15deg 85deg auto';
+const THETA_INICIAL = (15 * Math.PI) / 180;
+const DOIS_PI = Math.PI * 2;
+
+/**
+ * Traz o angulo para a volta mais proxima da inicial.
+ *
+ * getCameraOrbit() devolve o theta acumulado: quem girou a placa tres vezes
+ * recebe de volta algo como 19rad. Interpolar dali ate 15deg desenrolaria as
+ * tres voltas na frente de quem esta olhando. Normalizando, o retorno nunca
+ * percorre mais de meia volta.
+ */
+function maisProximoDoInicio(theta) {
+  let normalizado = theta;
+  while (normalizado - THETA_INICIAL > Math.PI) normalizado -= DOIS_PI;
+  while (THETA_INICIAL - normalizado > Math.PI) normalizado += DOIS_PI;
+  return normalizado;
+}
 
 export default function Esp32Interativa() {
   const { t } = useTranslation();
@@ -29,11 +46,17 @@ export default function Esp32Interativa() {
       timer = window.setTimeout(async () => {
         // Sincroniza a propriedade com a câmera arrastada antes de voltar.
         const orbita = placa.getCameraOrbit();
-        placa.cameraOrbit = `${orbita.theta}rad ${orbita.phi}rad ${orbita.radius}m`;
+        placa.cameraOrbit =
+          `${maisProximoDoInicio(orbita.theta)}rad ${orbita.phi}rad ${orbita.radius}m`;
         await placa.updateComplete;
         if (desmontado || segurando) return;
-        placa.cameraOrbit = ORBITA_INICIAL;
-        retomada = window.setTimeout(() => { placa.autoRotate = true; }, 800);
+        // Mantem o raio atual em vez de 'auto': voltar para 'auto' faz a
+        // camera recalcular a distancia e a placa dar um pulinho de zoom.
+        placa.cameraOrbit = `15deg 85deg ${orbita.radius}m`;
+        // 1000ms cobre a interpolacao com folga. Com os 800ms anteriores a
+        // rotacao automatica entrava antes de a camera assentar, e os dois
+        // movimentos brigavam na tela.
+        retomada = window.setTimeout(() => { placa.autoRotate = true; }, 1000);
       }, 1500);
     }
 
@@ -89,6 +112,7 @@ export default function Esp32Interativa() {
       interaction-prompt="none"
       orientation="0deg 90deg 0deg"
       camera-orbit={ORBITA_INICIAL}
+      interpolation-decay="160"
       auto-rotate
       auto-rotate-delay="0"
       rotation-per-second="12deg"
