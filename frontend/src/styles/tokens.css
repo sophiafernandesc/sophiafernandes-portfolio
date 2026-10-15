@@ -101,6 +101,8 @@
   --altura-esp32: 26rem;
   --largura-rotulo-sobre: 5rem;
   --altura-foto-home: 20rem;
+  --diametro-foto-movel: 11rem; /* foto redonda no celular */
+  --alvo-toque: 2.75rem;        /* 44px: minimo da Apple HIG para o dedo */
   --altura-recaptcha: 4.875rem;     /* iframe do reCAPTCHA, 78px */
   --altura-barra-grafico: 0.625rem; /* barra do gráfico de linguagens */
   --largura-rotulo-grafico: 8.5rem;  /* coluna do nome da linguagem */
@@ -111,6 +113,17 @@
 
   --raio: 10px;
   --raio-peq: 6px;
+}
+
+/* Degrau intermediario. Entre 900px e ~1000px o hero ainda tem duas colunas e
+   a coluna de texto cai para ~385px, estreita demais para "Sophia Fernandes"
+   em 54px: o nome quebrava em duas linhas. O gutter de 4rem tambem desperdica
+   muita largura em tablet. */
+@media (max-width: 1100px) {
+  :root {
+    --tam-display: 2.5rem;
+    --gutter: 2rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -62,4 +62,12 @@
 @media (max-width: 900px) {
   .grade { grid-template-columns: 1fr; gap: var(--esp-8); }
   .linha { grid-template-columns: 1fr; }
+
+  /* 16px e o limiar do Safari no iPhone: com fonte menor, o campo recebe foco
+     e a pagina da zoom sozinha, sem voltar depois. Acontecia justamente na
+     pagina de contato, que e onde menos se quer atrito. */
+  .campo input, .campo textarea { font-size: var(--tam-corpo); }
+
+  /* Os canais diretos sao o outro alvo de toque da pagina. */
+  .canal { min-block-size: var(--alvo-toque); }
 }

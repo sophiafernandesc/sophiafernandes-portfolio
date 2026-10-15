@@ -35,7 +35,9 @@ export default function Home() {
             <span aria-hidden="true"> / </span>
             <span className={estilos.local}>{t('home.local')}</span>
           </p>
-          <TextoDigitando key={idioma} frases={t('home.especialidades', { returnObjects: true })} />
+          <div className={estilos.digitando}>
+            <TextoDigitando key={idioma} frases={t('home.especialidades', { returnObjects: true })} />
+          </div>
           <p className={estilos.resumo}>{t('home.resumo')}</p>
           <p className={estilos.resumo}>{t('home.resumo2')}</p>
 

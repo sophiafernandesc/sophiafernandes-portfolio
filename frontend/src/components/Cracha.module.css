@@ -19,3 +19,17 @@
   /* 30% do topo mantem o rosto no enquadramento quando o corte e vertical. */
   object-position: center 30%;
 }
+
+/* No celular a foto vira um retrato redondo e centralizado: ocupa menos altura
+   e deixa o nome aparecer antes da dobra. */
+@media (max-width: 900px) {
+  .cartao {
+    inline-size: var(--diametro-foto-movel);
+    block-size: var(--diametro-foto-movel);
+    border-radius: 50%;
+    margin-inline: auto;
+  }
+
+  /* Num recorte circular o rosto precisa subir um pouco. */
+  .foto { object-position: center 25%; }
+}
