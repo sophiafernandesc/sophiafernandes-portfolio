@@ -13,7 +13,6 @@ import { writeFile, readFile } from 'node:fs/promises';
 
 const USUARIO = process.env.WAKATIME_USUARIO ?? '0b484a42-46f5-4d34-8ba3-3241f7e3c703';
 const DESTINO = new URL('../src/conteudo/wakatime.json', import.meta.url);
-const QUANTAS = 6; // as demais viram uma linha "Outras"
 
 /** Nunca derruba o build: o JSON versionado continua valendo. */
 async function manterOqueExiste(motivo) {
@@ -30,49 +29,29 @@ async function manterOqueExiste(motivo) {
 
 const endereco = `https://wakatime.com/api/v1/users/${USUARIO}/stats/all_time`;
 
-let resposta;
+// Cada grupo conserva o percentual informado pelo WakaTime.
+function normalizar(itens = []) {
+  return itens.filter((item) => Number.isFinite(item.total_seconds) && item.total_seconds > 0)
+    .sort((a, b) => b.total_seconds - a.total_seconds)
+    .map((item) => ({ nome: item.name, segundos: Math.round(item.total_seconds),
+      percentual: Number.isFinite(item.percent) ? Number(item.percent.toFixed(1)) : 0 }));
+}
+
 try {
-  resposta = await fetch(endereco, { signal: AbortSignal.timeout(15000) });
+  const resposta = await fetch(endereco, { signal: AbortSignal.timeout(15000) });
+  if (!resposta.ok) throw new Error(`API respondeu ${resposta.status}`);
+  const { data } = await resposta.json();
+  if (!Array.isArray(data?.languages) || !data.languages.length) throw new Error('Resposta sem linguagens');
+  const saida = {
+    atualizadoEm: new Date().toISOString().slice(0, 10),
+    totalSegundos: Math.round(data.total_seconds),
+    mediaDiariaSegundos: Math.round(data.daily_average),
+    linguagens: normalizar(data.languages),
+    categorias: normalizar(data.categories).filter((item) => !/\bai\b|artificial intelligence/i.test(item.nome)),
+    sistemas: normalizar(data.operating_systems),
+  };
+  await writeFile(DESTINO, JSON.stringify(saida, null, 2) + '\n');
+  console.log('[wakatime] Estatísticas atualizadas.');
 } catch (erro) {
-  await manterOqueExiste(`Falha de rede: ${erro.message}`);
+  await manterOqueExiste(`Não foi possível atualizar: ${erro.message}`);
 }
-
-if (!resposta.ok) {
-  await manterOqueExiste(`A API respondeu ${resposta.status}.`);
-}
-
-const { data } = await resposta.json();
-
-if (!data?.languages?.length) {
-  await manterOqueExiste('A resposta não trouxe linguagens.');
-}
-
-const todas = data.languages
-  .filter((l) => l.total_seconds > 0)
-  .sort((a, b) => b.total_seconds - a.total_seconds);
-
-const principais = todas.slice(0, QUANTAS).map((l) => ({
-  nome: l.name,
-  segundos: Math.round(l.total_seconds),
-  percentual: Number(l.percent.toFixed(1)),
-}));
-
-const resto = todas.slice(QUANTAS);
-if (resto.length > 0) {
-  principais.push({
-    nome: null, // o componente traduz para "Outras"
-    quantas: resto.length,
-    segundos: Math.round(resto.reduce((soma, l) => soma + l.total_seconds, 0)),
-    percentual: Number(resto.reduce((soma, l) => soma + l.percent, 0).toFixed(1)),
-  });
-}
-
-const saida = {
-  atualizadoEm: new Date().toISOString().slice(0, 10),
-  totalSegundos: Math.round(data.total_seconds),
-  mediaDiariaSegundos: Math.round(data.daily_average),
-  linguagens: principais,
-};
-
-await writeFile(DESTINO, JSON.stringify(saida, null, 2) + '\n');
-console.log(`[wakatime] ${principais.length} linhas gravadas · total ${data.human_readable_total}.`);

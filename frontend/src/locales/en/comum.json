@@ -21,11 +21,9 @@
     "foto_alt": "Portrait of Sophia Fernandes",
     "curriculo": "Resume",
     "contato": "Contact",
-    "wakatime": "Wakatime",
-    "wakatime_periodo": "All time",
+    "wakatime": "Coding activity",
     "wakatime_duracao": "{{h}}h {{min}}m",
     "wakatime_outras": "{{quantas}} others",
-    "wakatime_resumo": "{{total}} total · {{media}} per day · updated {{data}}",
     "wakatime_vazio": "Stats unavailable right now.",
     "projetos": "Projects",
     "projetos_sub": "Selection",
@@ -36,7 +34,25 @@
       "from the CAN bus to the cloud",
       "from firmware to REST API",
       "from the sensor to the screen"
-    ]
+    ],
+    "wakatime_registradas": "recorded through {{data}}",
+    "wakatime_total_nota": "Total tracked by WakaTime, including documentation and configuration.",
+    "wakatime_linguagens": "Languages and styles",
+    "wakatime_outros_registros": "Documentation, configuration and other activity",
+    "wakatime_total": "Tracked time",
+    "wakatime_categorias_titulo": "Categories",
+    "wakatime_sistemas": "Operating systems",
+    "wakatime_mais_linguagens": "More languages and styles",
+    "wakatime_categorias": {
+      "programando": "Coding",
+      "documentando": "Writing documentation",
+      "testando": "Writing tests",
+      "depurando": "Debugging",
+      "navegando": "Browsing",
+      "projetando": "Designing",
+      "revisando": "Reviewing code",
+      "executando_testes": "Running tests"
+    }
   },
   "sobre": {
     "titulo": "About me",

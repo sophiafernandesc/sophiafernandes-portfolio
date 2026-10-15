@@ -105,7 +105,10 @@
   --alvo-toque: 2.75rem;        /* 44px: minimo da Apple HIG para o dedo */
   --altura-recaptcha: 4.875rem;     /* iframe do reCAPTCHA, 78px */
   --altura-barra-grafico: 0.625rem; /* barra do gráfico de linguagens */
-  --largura-rotulo-grafico: 8.5rem;  /* coluna do nome da linguagem */
+  --espaco-segmento-grafico: 0.1875rem;
+  --raio-segmento-grafico: 2px;
+  --largura-percentual-grafico: 3.5rem;
+  --largura-rotulo-grafico: 6rem;  /* coluna do nome da linguagem */
   --altura-texto-digitando: 1.75rem;
   --largura-maxima: 1440px;
   --gutter: 4rem;
