@@ -4,7 +4,7 @@ import { FiFileText, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
 import CardProjeto from '../components/CardProjeto';
 import Cracha from '../components/Cracha';
 import TextoDigitando from '../components/TextoDigitando';
-import SecaoVazia from '../components/SecaoVazia';
+import GraficoLinguagens from '../components/GraficoLinguagens';
 import useIdioma from '../hooks/useIdioma';
 import { getProjetos } from '../conteudo/projetos';
 import { LINKS } from '../config/links';
@@ -61,7 +61,7 @@ export default function Home() {
           <span aria-hidden="true">01 - </span>{t('home.wakatime')}
           <span aria-hidden="true"> · </span>{t('home.wakatime_periodo')}
         </h2>
-        <SecaoVazia altura={200}>gráfico de barras - horas por linguagem</SecaoVazia>
+        <GraficoLinguagens />
       </section>
 
       <section id="projetos" className={estilos.secao}>

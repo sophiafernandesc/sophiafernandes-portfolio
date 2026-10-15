@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "wakatime": "node scripts/baixar-wakatime.mjs",
+    "prebuild": "npm run wakatime",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
