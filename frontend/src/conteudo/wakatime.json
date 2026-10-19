@@ -1,97 +1,104 @@
 {
-  "atualizadoEm": "2026-10-15",
-  "totalSegundos": 108890,
-  "mediaDiariaSegundos": 3630,
+  "atualizadoEm": "2026-10-19",
+  "inicioEm": "2026-06-18",
+  "diasComRegistro": 32,
+  "totalSegundos": 135660,
+  "mediaDiariaSegundos": 4239,
   "linguagens": [
     {
       "nome": "Markdown",
-      "segundos": 29678,
-      "percentual": 26.5
+      "segundos": 31747,
+      "percentual": 22.5
     },
     {
       "nome": "Java",
-      "segundos": 19198,
-      "percentual": 17.1
+      "segundos": 29408,
+      "percentual": 20.8
     },
     {
       "nome": "HTML",
-      "segundos": 12558,
-      "percentual": 11.2
+      "segundos": 12947,
+      "percentual": 9.2
     },
     {
       "nome": "CSS",
-      "segundos": 10097,
-      "percentual": 9
+      "segundos": 11322,
+      "percentual": 8
+    },
+    {
+      "nome": "JavaScript",
+      "segundos": 9710,
+      "percentual": 6.9
     },
     {
       "nome": "GitIgnore file",
       "segundos": 9536,
-      "percentual": 8.5
+      "percentual": 6.8
     },
     {
-      "nome": "JavaScript",
-      "segundos": 7844,
-      "percentual": 7
+      "nome": "Java Properties",
+      "segundos": 6266,
+      "percentual": 4.4
     },
     {
       "nome": "TypeScript",
       "segundos": 5513,
-      "percentual": 4.9
+      "percentual": 3.9
     },
     {
       "nome": "Other",
-      "segundos": 3028,
-      "percentual": 2.7
+      "segundos": 5461,
+      "percentual": 3.9
+    },
+    {
+      "nome": "Bash",
+      "segundos": 3564,
+      "percentual": 2.5
     },
     {
       "nome": "Python",
       "segundos": 2708,
-      "percentual": 2.4
+      "percentual": 1.9
     },
     {
       "nome": "YAML",
       "segundos": 2489,
-      "percentual": 2.2
+      "percentual": 1.8
     },
     {
-      "nome": "Java Properties",
-      "segundos": 1960,
+      "nome": "JSON",
+      "segundos": 2480,
       "percentual": 1.8
+    },
+    {
+      "nome": "XML",
+      "segundos": 2321,
+      "percentual": 1.6
     },
     {
       "nome": "CSV",
       "segundos": 1890,
-      "percentual": 1.7
+      "percentual": 1.3
     },
     {
       "nome": "textmate",
       "segundos": 1671,
-      "percentual": 1.5
-    },
-    {
-      "nome": "XML",
-      "segundos": 1077,
-      "percentual": 1
+      "percentual": 1.2
     },
     {
       "nome": "Properties",
       "segundos": 655,
-      "percentual": 0.6
-    },
-    {
-      "nome": "JSON",
-      "segundos": 585,
       "percentual": 0.5
     },
     {
       "nome": "Image (svg)",
       "segundos": 563,
-      "percentual": 0.5
+      "percentual": 0.4
     },
     {
       "nome": "Text",
       "segundos": 522,
-      "percentual": 0.5
+      "percentual": 0.4
     },
     {
       "nome": "CSV/TSV",
@@ -117,19 +124,24 @@
   "categorias": [
     {
       "nome": "Coding",
-      "segundos": 37871,
-      "percentual": 33.8
+      "segundos": 38272,
+      "percentual": 27.1
     },
     {
       "nome": "Writing Docs",
-      "segundos": 17452,
-      "percentual": 15.6
+      "segundos": 17705,
+      "percentual": 12.6
+    },
+    {
+      "nome": "Writing Tests",
+      "segundos": 89,
+      "percentual": 0.1
     }
   ],
   "sistemas": [
     {
       "nome": "Mac",
-      "segundos": 111918,
+      "segundos": 141121,
       "percentual": 100
     }
   ]

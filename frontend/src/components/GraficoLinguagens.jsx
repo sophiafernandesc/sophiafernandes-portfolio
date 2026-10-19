@@ -7,7 +7,7 @@ const CATEGORIAS = { Coding: 'programando', 'Writing Docs': 'documentando', 'Wri
 
 export default function GraficoLinguagens() {
   const { t, i18n } = useTranslation();
-  const { linguagens = [], totalSegundos, atualizadoEm } = dados;
+  const { linguagens = [], totalSegundos, atualizadoEm, inicioEm } = dados;
   if (!linguagens.length) return <p className="metadado">{t('home.wakatime_vazio')}</p>;
   const principais = linguagens.filter((item) => item.nome && !ARQUIVOS_DE_APOIO.has(item.nome)).sort((a, b) => b.segundos - a.segundos);
   const apoio = linguagens.filter((item) => !principais.includes(item));
@@ -15,9 +15,14 @@ export default function GraficoLinguagens() {
     const minutos = Math.round(segundos / 60);
     return t('home.wakatime_duracao', { h: Math.floor(minutos / 60), min: String(minutos % 60).padStart(2, '0') });
   };
-  const data = atualizadoEm ? new Intl.DateTimeFormat(i18n.resolvedLanguage, {
+  /* As duas datas vem em ISO do build e sao formatadas aqui, no idioma de quem
+     visita: a API so entrega o inicio como texto em ingles. O meio-dia evita
+     que o fuso jogue a data para o dia anterior. */
+  const formatar = (iso) => (iso ? new Intl.DateTimeFormat(i18n.resolvedLanguage, {
     day: 'numeric', month: 'short', year: 'numeric',
-  }).format(new Date(`${atualizadoEm}T12:00:00`)) : null;
+  }).format(new Date(`${iso}T12:00:00`)) : null);
+  const data = formatar(atualizadoEm);
+  const inicio = formatar(inicioEm);
 
   function linhas(itens, categoria = false) {
     return <ul className={estilos.lista}>{itens.map((item, indice) => {
@@ -45,7 +50,9 @@ export default function GraficoLinguagens() {
       <header className={estilos.cabecalho}>
         <div><p className={estilos.rotulo}>{t('home.wakatime_total')}</p><p className={estilos.numero}>{duracao(totalSegundos)}</p></div>
         <div className={estilos.contexto}>
-          {data && <p>{t('home.wakatime_registradas', { data })}</p>}
+          {data && <p>{inicio
+            ? t('home.wakatime_intervalo', { inicio, data })
+            : t('home.wakatime_registradas', { data })}</p>}
           <p>{t('home.wakatime_total_nota')}</p>
         </div>
       </header>

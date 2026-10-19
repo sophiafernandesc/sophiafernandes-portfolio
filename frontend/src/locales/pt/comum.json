@@ -36,6 +36,7 @@
       "do sensor à tela do app"
     ],
     "wakatime_registradas": "registradas até {{data}}",
+    "wakatime_intervalo": "registradas de {{inicio}} a {{data}}",
     "wakatime_total_nota": "Total registrado pelo WakaTime, incluindo documentação e configuração.",
     "wakatime_linguagens": "Linguagens e estilos",
     "wakatime_outros_registros": "Documentação, configuração e outros registros",

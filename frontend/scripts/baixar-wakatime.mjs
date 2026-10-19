@@ -29,6 +29,21 @@ async function manterOqueExiste(motivo) {
 
 const endereco = `https://wakatime.com/api/v1/users/${USUARIO}/stats/all_time`;
 
+/**
+ * Extrai a data em que a contagem comecou.
+ *
+ * A API nao devolve a data em formato de maquina no intervalo 'all_time': so o
+ * texto 'since Jun 18 2026' em human_readable_range. Convertemos aqui, no
+ * build, para que o componente possa formatar no idioma de quem visita em vez
+ * de exibir o mes abreviado em ingles.
+ */
+function dataDeInicio(intervalo) {
+  const achado = /since\s+(.+)$/i.exec(intervalo ?? '');
+  if (!achado) return null;
+  const data = new Date(`${achado[1]} 12:00:00 UTC`);
+  return Number.isNaN(data.getTime()) ? null : data.toISOString().slice(0, 10);
+}
+
 // Cada grupo conserva o percentual informado pelo WakaTime.
 function normalizar(itens = []) {
   return itens.filter((item) => Number.isFinite(item.total_seconds) && item.total_seconds > 0)
@@ -44,6 +59,8 @@ try {
   if (!Array.isArray(data?.languages) || !data.languages.length) throw new Error('Resposta sem linguagens');
   const saida = {
     atualizadoEm: new Date().toISOString().slice(0, 10),
+    inicioEm: dataDeInicio(data.human_readable_range),
+    diasComRegistro: Number.isFinite(data.days_minus_holidays) ? data.days_minus_holidays : null,
     totalSegundos: Math.round(data.total_seconds),
     mediaDiariaSegundos: Math.round(data.daily_average),
     linguagens: normalizar(data.languages),
