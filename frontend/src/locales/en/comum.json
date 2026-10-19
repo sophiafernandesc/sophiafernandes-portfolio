@@ -17,7 +17,7 @@
   "home": {
     "papel": "Software Engineering",
     "local": "Belo Horizonte, Brazil",
-    "resumo": "I build back-end with Java and Spring Boot, with roots in electronics and embedded systems. At Stellantis, I validated automotive infotainment and connectivity. In my own projects, I build the whole path the data takes: from the CAN bus to the app screen.",
+    "resumo": "I build back-end systems with Java and Spring Boot, with roots in electronics and embedded systems. At Stellantis, I validated automotive infotainment and connectivity. In my own projects, I build the data's full path: from the CAN bus to the app screen.",
     "foto_alt": "Portrait of Sophia Fernandes",
     "curriculo": "Resume",
     "contato": "Contact",
@@ -28,14 +28,15 @@
     "projetos": "Projects",
     "projetos_sub": "Selection",
     "ver_todos": "See all {{count}} projects",
-    "resumo2": "I like problems that require understanding the whole system before the first line of code. That was true debugging ECUs, where an intermittent failure only yields to method, and it is true in back-end work, where the wrong model charges you six months later. The timeline below starts with a quadruped robot in C++ and ends in full-stack platforms.",
+    "resumo2": "I like problems that require understanding the whole system before the first line of code. That was true when debugging ECUs, where an intermittent failure only yields to method, and it is true in back-end work, where the wrong model costs you six months down the road. The timeline below starts with a quadruped robot in C++ and ends in full-stack platforms.",
     "especialidades": [
-      "from electronics to back-end",
+      "from electronics to the back-end",
       "from the CAN bus to the cloud",
-      "from firmware to REST API",
+      "from firmware to REST APIs",
       "from the sensor to the screen"
     ],
     "wakatime_registradas": "recorded through {{data}}",
+    "wakatime_intervalo": "recorded from {{inicio}} to {{data}}",
     "wakatime_total_nota": "Total tracked by WakaTime, including documentation and configuration.",
     "wakatime_linguagens": "Languages and styles",
     "wakatime_outros_registros": "Documentation, configuration and other activity",
@@ -60,7 +61,7 @@
     "cursos": "Courses",
     "esp32_alt": "ESP32 DOIT DEVKIT V1 board with a metal module and two rows of pins",
     "esp32_erro": "The 3D model could not load. Showing the board image.",
-    "chamada": "From electronics to back-end."
+    "chamada": "From electronics to the back-end."
   },
   "projetos": {
     "titulo": "Projects",
