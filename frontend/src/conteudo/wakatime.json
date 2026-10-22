@@ -1,97 +1,105 @@
 {
-  "atualizadoEm": "2026-10-15",
-  "totalSegundos": 108890,
-  "mediaDiariaSegundos": 3630,
+  "atualizadoEm": "2026-10-22",
+  "inicioEm": "2026-08-31",
+  "diasComRegistro": 35,
+  "diasTotais": 52,
+  "totalSegundos": 163160,
+  "mediaDiariaSegundos": 4662,
   "linguagens": [
     {
       "nome": "Markdown",
-      "segundos": 29678,
-      "percentual": 26.5
+      "segundos": 34000,
+      "percentual": 20
     },
     {
       "nome": "Java",
-      "segundos": 19198,
-      "percentual": 17.1
+      "segundos": 29529,
+      "percentual": 17.3
     },
     {
       "nome": "HTML",
-      "segundos": 12558,
-      "percentual": 11.2
-    },
-    {
-      "nome": "CSS",
-      "segundos": 10097,
-      "percentual": 9
-    },
-    {
-      "nome": "GitIgnore file",
-      "segundos": 9536,
-      "percentual": 8.5
-    },
-    {
-      "nome": "JavaScript",
-      "segundos": 7844,
-      "percentual": 7
+      "segundos": 17509,
+      "percentual": 10.3
     },
     {
       "nome": "TypeScript",
-      "segundos": 5513,
-      "percentual": 4.9
+      "segundos": 16474,
+      "percentual": 9.7
+    },
+    {
+      "nome": "CSS",
+      "segundos": 16350,
+      "percentual": 9.6
+    },
+    {
+      "nome": "JavaScript",
+      "segundos": 9788,
+      "percentual": 5.8
+    },
+    {
+      "nome": "GitIgnore file",
+      "segundos": 9537,
+      "percentual": 5.6
     },
     {
       "nome": "Other",
-      "segundos": 3028,
-      "percentual": 2.7
+      "segundos": 7135,
+      "percentual": 4.2
+    },
+    {
+      "nome": "Java Properties",
+      "segundos": 6266,
+      "percentual": 3.7
+    },
+    {
+      "nome": "YAML",
+      "segundos": 3653,
+      "percentual": 2.1
+    },
+    {
+      "nome": "Bash",
+      "segundos": 3564,
+      "percentual": 2.1
+    },
+    {
+      "nome": "textmate",
+      "segundos": 3366,
+      "percentual": 2
+    },
+    {
+      "nome": "JSON",
+      "segundos": 2797,
+      "percentual": 1.6
     },
     {
       "nome": "Python",
       "segundos": 2708,
-      "percentual": 2.4
+      "percentual": 1.6
     },
     {
-      "nome": "YAML",
-      "segundos": 2489,
-      "percentual": 2.2
-    },
-    {
-      "nome": "Java Properties",
-      "segundos": 1960,
-      "percentual": 1.8
+      "nome": "XML",
+      "segundos": 2321,
+      "percentual": 1.4
     },
     {
       "nome": "CSV",
       "segundos": 1890,
-      "percentual": 1.7
+      "percentual": 1.1
     },
     {
-      "nome": "textmate",
-      "segundos": 1671,
-      "percentual": 1.5
-    },
-    {
-      "nome": "XML",
-      "segundos": 1077,
-      "percentual": 1
+      "nome": "Text",
+      "segundos": 1844,
+      "percentual": 1.1
     },
     {
       "nome": "Properties",
       "segundos": 655,
-      "percentual": 0.6
-    },
-    {
-      "nome": "JSON",
-      "segundos": 585,
-      "percentual": 0.5
+      "percentual": 0.4
     },
     {
       "nome": "Image (svg)",
       "segundos": 563,
-      "percentual": 0.5
-    },
-    {
-      "nome": "Text",
-      "segundos": 522,
-      "percentual": 0.5
+      "percentual": 0.3
     },
     {
       "nome": "CSV/TSV",
@@ -106,7 +114,7 @@
     {
       "nome": "Git Config",
       "segundos": 69,
-      "percentual": 0.1
+      "percentual": 0
     },
     {
       "nome": "IDEA_MODULE",
@@ -114,22 +122,54 @@
       "percentual": 0
     }
   ],
+  "editores": [
+    {
+      "nome": "Claude Code",
+      "segundos": 84621,
+      "percentual": 49.7
+    },
+    {
+      "nome": "IntelliJ IDEA",
+      "segundos": 67989,
+      "percentual": 39.9
+    },
+    {
+      "nome": "Codex Vscode",
+      "segundos": 12640,
+      "percentual": 7.4
+    },
+    {
+      "nome": "PyCharm",
+      "segundos": 3384,
+      "percentual": 2
+    },
+    {
+      "nome": "Copilot CLI",
+      "segundos": 1660,
+      "percentual": 1
+    }
+  ],
   "categorias": [
     {
       "nome": "Coding",
-      "segundos": 37871,
-      "percentual": 33.8
+      "segundos": 41936,
+      "percentual": 24.6
     },
     {
       "nome": "Writing Docs",
-      "segundos": 17452,
-      "percentual": 15.6
+      "segundos": 18049,
+      "percentual": 10.6
+    },
+    {
+      "nome": "Writing Tests",
+      "segundos": 89,
+      "percentual": 0.1
     }
   ],
   "sistemas": [
     {
       "nome": "Mac",
-      "segundos": 111918,
+      "segundos": 170295,
       "percentual": 100
     }
   ]

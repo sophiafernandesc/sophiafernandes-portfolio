@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiMail, FiMessageCircle, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { LINKS } from '../config/links';
 import Recaptcha from '../components/Recaptcha';
 import useIdioma from '../hooks/useIdioma';
 import { useTema } from '../theme/TemaProvider';
-import { enviarContato } from '../services/contato';
+import { acordarApi, enviarContato } from '../services/contato';
 import estilos from './Contato.module.css';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,16 +14,17 @@ export default function Contato() {
   const { t } = useTranslation();
   const idioma = useIdioma();
   const { tema } = useTema();
-  const [estado, setEstado] = useState('ocioso'); // ocioso | enviando | ok | erro | recusado
+  const [estado, setEstado] = useState('ocioso');
   const [erros, setErros] = useState({});
   const [token, setToken] = useState(null);
-  // Mudar este número limpa a caixa: o token do reCAPTCHA é de uso único.
   const [reiniciar, setReiniciar] = useState(0);
   const [recaptchaQuebrou, setRecaptchaQuebrou] = useState(false);
+  const [demorando, setDemorando] = useState(false);
+
+  useEffect(() => { acordarApi(); }, []);
 
   const canais = [
     { icone: FiMail, rotulo: 'E-mail', valor: LINKS.email, href: `mailto:${LINKS.email}` },
-    { icone: FiMessageCircle, rotulo: 'WhatsApp', valor: LINKS.whatsappTexto, href: LINKS.whatsapp },
     { icone: FiLinkedin, rotulo: 'LinkedIn', valor: LINKS.linkedinTexto, href: LINKS.linkedin },
     { icone: FiGithub, rotulo: 'GitHub', valor: LINKS.githubTexto, href: LINKS.github },
   ];
@@ -32,8 +33,6 @@ export default function Contato() {
     evento.preventDefault();
     const dados = new FormData(evento.currentTarget);
 
-    // Campo isca: invisível para pessoas, robô costuma preencher.
-    // Finge sucesso para o robô não tentar de novo, mas não envia nada.
     if (dados.get('website')) {
       setEstado('ok');
       evento.currentTarget.reset();
@@ -48,22 +47,22 @@ export default function Contato() {
     if (!nome) novosErros.nome = t('contato.erro_nome');
     if (!EMAIL_RE.test(email)) novosErros.email = t('contato.erro_email');
     if (!mensagem) novosErros.mensagem = t('contato.erro_mensagem');
-    // Se o widget nem carregou, não trava o formulário por uma caixa que a
-    // pessoa não tem como marcar: o servidor continua sendo quem decide.
     if (!token && !recaptchaQuebrou) novosErros.recaptcha = t('contato.erro_recaptcha');
     setErros(novosErros);
     if (Object.keys(novosErros).length > 0) return;
 
     const formulario = evento.currentTarget;
     setEstado('enviando');
+    const avisoDeDemora = window.setTimeout(() => setDemorando(true), 8000);
     try {
       await enviarContato({ nome, email, mensagem, tokenRecaptcha: token });
       setEstado('ok');
       formulario.reset();
     } catch (falha) {
-      // 400 aqui só sobra para o reCAPTCHA: os campos já foram validados acima.
       setEstado(falha?.status === 400 ? 'recusado' : 'erro');
     } finally {
+      window.clearTimeout(avisoDeDemora);
+      setDemorando(false);
       // O token morre no primeiro uso, tendo dado certo ou não.
       setToken(null);
       setReiniciar((n) => n + 1);
@@ -160,6 +159,7 @@ export default function Contato() {
               {estado === 'ok' && t('contato.sucesso')}
               {estado === 'erro' && t('contato.erro')}
               {estado === 'recusado' && t('contato.erro_recusado')}
+              {estado === 'enviando' && demorando && t('contato.acordando')}
             </p>
           </form>
         </section>

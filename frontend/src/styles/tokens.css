@@ -114,11 +114,23 @@
   --altura-barra-janela: 1.5rem;   /* barra de titulo da moldura de captura */
   --diametro-ponto-janela: 0.5rem; /* cada bolinha da sinaleira */
   --altura-recaptcha: 4.875rem;     /* iframe do reCAPTCHA, 78px */
-  --altura-barra-grafico: 0.625rem; /* barra do gráfico de linguagens */
-  --espaco-segmento-grafico: 0.1875rem;
-  --raio-segmento-grafico: 2px;
-  --largura-percentual-grafico: 3.5rem;
-  --largura-rotulo-grafico: 6rem;  /* coluna do nome da linguagem */
+  /* Com 1% a barra teria menos de um pixel e a linha pareceria vazia.
+     Este minimo garante que todo valor registrado apareca. */
+  --largura-card-waka: 8.5rem;   /* minimo de cada card na grade auto-fill */
+  --tam-icone-card: 1.5rem;
+  /* Véu da seleção de texto. Translúcido de propósito: o texto mantém a cor
+     original em vez de inverter, o que deixa o efeito suave e preserva o
+     contraste dele (entre 7,2:1 e 11,7:1 nos dois temas). Resolve --cor-acento
+     em tempo de uso, então acompanha o tema sem precisar ser redeclarado. */
+  --cor-selecao: color-mix(in srgb, var(--cor-acento) 30%, transparent);
+
+  --largura-card-estatistica: 12rem; /* minimo de cada card de estatistica */
+  --diametro-medalhao: 3.5rem;       /* anel + icone no topo do card */
+  --espessura-anel: 2;               /* unidades do viewBox do SVG, sem unidade */
+
+  /* Numero das estatisticas do topo. Entre --tam-h2 e --tam-h1: em h2 o mono
+     ficava esqualido, em h1 as tres colunas nao cabiam lado a lado. */
+  --tam-estatistica: 2rem;
   --altura-texto-digitando: 1.75rem;
   --largura-maxima: 1440px;
   --gutter: 4rem;

@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-/** Libera a API para o front-end hospedado à parte */
 @Configuration
 public class ConfiguracaoCors implements WebMvcConfigurer {
 
@@ -20,7 +19,7 @@ public class ConfiguracaoCors implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registro) {
         registro.addMapping("/api/**")
                 .allowedOrigins(propriedades.origens().toArray(String[]::new))
-                .allowedMethods("POST")
+                .allowedMethods("GET", "POST")
                 .allowedHeaders("Content-Type")
                 .maxAge(VALIDADE_DO_PREFLIGHT_EM_SEGUNDOS);
     }
