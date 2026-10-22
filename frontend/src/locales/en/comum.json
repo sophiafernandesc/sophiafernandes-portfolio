@@ -94,6 +94,7 @@
     "mensagem_ph": "Tell me about the role, the project or your question...",
     "enviar": "Send message",
     "enviando": "Sending...",
+    "acordando": "The server is waking up. The first message can take up to a minute.",
     "protecao": "Protected by reCAPTCHA and honeypot.",
     "sucesso": "Message sent. Thanks for reaching out!",
     "erro": "Couldn't send it right now. Please try again shortly.",

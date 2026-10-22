@@ -94,6 +94,7 @@
     "mensagem_ph": "Conte sobre a vaga, o projeto ou a dúvida...",
     "enviar": "Enviar mensagem",
     "enviando": "Enviando...",
+    "acordando": "O servidor está acordando. O primeiro envio pode levar até um minuto.",
     "protecao": "Protegido por reCAPTCHA e honeypot.",
     "sucesso": "Mensagem enviada. Obrigada pelo contato!",
     "erro": "Não consegui enviar agora. Tente de novo em instantes.",
