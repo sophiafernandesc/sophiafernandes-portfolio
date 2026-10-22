@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiMail, FiMessageCircle, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { LINKS } from '../config/links';
 import Recaptcha from '../components/Recaptcha';
 import useIdioma from '../hooks/useIdioma';
@@ -14,7 +14,7 @@ export default function Contato() {
   const { t } = useTranslation();
   const idioma = useIdioma();
   const { tema } = useTema();
-  const [estado, setEstado] = useState('ocioso'); // ocioso | enviando | ok | erro | recusado
+  const [estado, setEstado] = useState('ocioso');
   const [erros, setErros] = useState({});
   const [token, setToken] = useState(null);
   const [reiniciar, setReiniciar] = useState(0);
@@ -25,7 +25,6 @@ export default function Contato() {
 
   const canais = [
     { icone: FiMail, rotulo: 'E-mail', valor: LINKS.email, href: `mailto:${LINKS.email}` },
-    { icone: FiMessageCircle, rotulo: 'WhatsApp', valor: LINKS.whatsappTexto, href: LINKS.whatsapp },
     { icone: FiLinkedin, rotulo: 'LinkedIn', valor: LINKS.linkedinTexto, href: LINKS.linkedin },
     { icone: FiGithub, rotulo: 'GitHub', valor: LINKS.githubTexto, href: LINKS.github },
   ];

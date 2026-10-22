@@ -1,5 +1,10 @@
-/* O widget vem do Google num iframe de 302px fixos: não dá para estilizar por
-   dentro, só reservar o espaço e impedir que ele estoure a coluna no celular. */
+/* O widget vem do Google num iframe de 302px fixos, dentro de um contêiner
+   proprio de 304px que ele injeta. Nao da para estilizar por dentro, e
+   envolve-lo numa caixa tambem nao resolve: a diferenca de dois pixels entre
+   os dois aparece como uma sobra torta na direita e embaixo.
+
+   Entao aqui so reservamos a altura, para a pagina nao saltar enquanto ele
+   carrega, e impedimos que estoure a coluna no celular. */
 .caixa {
   min-block-size: var(--altura-recaptcha);
 }
