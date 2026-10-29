@@ -1,12 +1,10 @@
 {
   "rewrites": [
     {
-      "_comment": "A API publica do WakaTime nao envia Access-Control-Allow-Origin, entao o navegador recusa a leitura direta. A SPA chama um caminho do proprio dominio e a Vercel repassa na borda, sem servidor nosso no caminho. Precisa vir ANTES do curinga: os rewrites sao avaliados em ordem.",
       "source": "/api/wakatime",
       "destination": "https://wakatime.com/api/v1/users/0b484a42-46f5-4d34-8ba3-3241f7e3c703/stats/all_time"
     },
     {
-      "_comment": "Toda rota do React Router cai no index.html. Sem isto, abrir /contato direto devolveria 404.",
       "source": "/(.*)",
       "destination": "/index.html"
     }
