@@ -43,7 +43,6 @@ public class ContatoControlador {
 
     @PostMapping("/contact")
     public Map<String, String> contato(@Valid @RequestBody ContatoRequisicao requisicao,
-
         servicoRecaptcha.validar(requisicao.tokenRecaptcha(), ipDe(http));
         servicoEmail.enviar(requisicao);
         log.info("Mensagem de contato enviada.");

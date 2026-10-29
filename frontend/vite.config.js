@@ -27,4 +27,17 @@ export default defineConfig({
     },
     react({ include: /\.(jsx|js|mdx)$/ }),
   ],
+
+  // Em produção quem repassa /api/wakatime é o rewrite do vercel.json. Aqui no
+  // desenvolvimento esse papel é do Vite, para o mesmo caminho relativo
+  // funcionar nos dois lugares e o componente não precisar saber onde roda.
+  server: {
+    proxy: {
+      '/api/wakatime': {
+        target: 'https://wakatime.com',
+        changeOrigin: true,
+        rewrite: () => '/api/v1/users/0b484a42-46f5-4d34-8ba3-3241f7e3c703/stats/all_time',
+      },
+    },
+  },
 });
