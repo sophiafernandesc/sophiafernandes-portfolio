@@ -42,3 +42,6 @@ nbproject/private/
 ._*
 Thumbs.db
 desktop.ini
+
+# Configuração de ferramentas de IA, local de cada máquina
+.codex/

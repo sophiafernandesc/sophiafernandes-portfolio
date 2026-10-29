@@ -152,38 +152,57 @@ A aplicação é dividida em duas partes independentes, com responsabilidades be
 
 ### Visão geral da stack
 
+```mermaid
+flowchart TD
+    mdx["Conteúdo em .mdx<br/>pt / en · versionado no Git"]
+    waka["WakaTime<br/>perfil público, leitura anônima"]
+
+    subgraph vercel["Vercel · sophiafernandes.dev"]
+        site["Site estático<br/>React 19 · Vite 8 · MDX 3"]
+        json["wakatime.json<br/>gravado no build"]
+        borda["rewrite /api/wakatime<br/>repasse na borda"]
+    end
+
+    subgraph render["Render · container Docker"]
+        api["Spring Boot 4.1 · Java 25<br/>stateless, sem banco"]
+    end
+
+    captcha["reCAPTCHA<br/>siteverify"]
+    smtp["Relay SMTP<br/>porta 2525"]
+    caixa["Caixa de entrada"]
+
+    mdx -->|compilado no build| site
+    waka -->|buscado no build| json
+    json -->|primeira renderização| site
+
+    site -->|números frescos| borda --> waka
+    site -->|"POST /api/contact<br/>só ao enviar o formulário"| api
+
+    api --> captcha
+    api --> smtp --> caixa
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  CONTEÚDO (versionado no Git)                               │
-│  arquivos .mdx  ·  frontmatter + corpo  ·  pt / en          │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ compilado no build
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│  FRONT-END  ·  React 19 + Vite 8 + MDX 3                    │
-│  React Router  ·  react-i18next  ·  CSS Modules             │
-│  Hospedagem: Vercel (site estático, sophiafernandes.dev)    │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ HTTPS, só no envio do formulário
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│  BACK-END  ·  Java 25 + Spring Boot 4.1  (stateless)        │
-│                                                             │
-│   POST /api/contact                                         │
-│     1. valida os campos      (Bean Validation)              │
-│     2. confere o desafio     ──►  reCAPTCHA siteverify      │
-│     3. envia a mensagem      ──►  SMTP                      │
-│                                                             │
-│  Hospedagem: Render (container Docker)                      │
-└─────────────────────────────────────────────────────────────┘
 
-As estatísticas do Wakatime não aparecem aqui de propósito: elas são
-buscadas no build e viram um JSON versionado, sem passar pelo back-end.
-```
+**O site inteiro carrega sem tocar no back-end.** Conteúdo, projetos e a
+primeira renderização das estatísticas já vêm prontos do build. A API no Render
+entra num momento só: quando alguém envia o formulário.
 
-**Por que essa separação.** Planos gratuitos de hospedagem para aplicações com back-end hibernam após um período de inatividade, e o primeiro acesso paga o custo de acordar o serviço - aqui, cerca de 50 segundos. Mantendo o conteúdo estático, esse custo nunca recai sobre quem abre o site: ele só aparece para quem envia o formulário, e todo o resto já está renderizado.
+**Por que essa separação.** Planos gratuitos de hospedagem para aplicações com
+back-end hibernam após um período de inatividade, e acordar custa perto de um
+minuto. Mantendo o conteúdo estático, essa espera nunca recai sobre quem abre o
+site, e o formulário a resolve pedindo `GET /api/health` assim que a página de
+contato abre, enquanto a pessoa ainda preenche os campos.
 
-**Por que o back-end existe.** Um motivo só: **segredo não pode ir para o cliente**. A credencial do SMTP e a secret key do reCAPTCHA ficam no servidor, nunca no bundle do front-end. É também por isso que a validação dos campos é repetida ali - o cliente é público e pode ser contornado, então a validação que vale é a do servidor.
+**Por que o back-end existe.** Um motivo só: **segredo não pode ir para o
+cliente**. A credencial do SMTP e a secret key do reCAPTCHA ficam no servidor,
+nunca no bundle. É também por isso que a validação dos campos é repetida ali,
+já que o cliente é público e pode ser contornado.
+
+**Por que o WakaTime não passa por ele.** A API pública deles devolve os dados
+certos mas não envia `Access-Control-Allow-Origin`, então o navegador recusa a
+leitura direta. Quem repassa é a própria hospedagem: em produção, o rewrite do
+`vercel.json`; em desenvolvimento, o `server.proxy` do `vite.config.js`. Não há
+credencial envolvida, o perfil é público, e a resposta na borda não depende de
+acordar instância nenhuma.
 
 ### Como o MDX funciona neste projeto
 
