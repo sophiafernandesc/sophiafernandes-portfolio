@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiActivity, FiCalendar, FiClock } from 'react-icons/fi';
 import { SiCss, SiDocker, SiGnubash, SiHtml5, SiJavascript, SiOpenjdk, SiPython, SiTypescript } from 'react-icons/si';
-import dados from '../conteudo/wakatime.json';
+import doBuild from '../conteudo/wakatime.json';
+import { normalizarWakatime } from '../conteudo/normalizarWakatime';
+import { buscarWakatime } from '../services/wakatime';
 import estilos from './GraficoLinguagens.module.css';
 
 const ARQUIVOS_DE_APOIO = new Set([
@@ -30,6 +33,16 @@ const QUANTAS_EM_DESTAQUE = 8;
 
 export default function GraficoLinguagens() {
   const { t, i18n } = useTranslation();
+  const [dados, setDados] = useState(doBuild);
+  useEffect(() => {
+    let vivo = true;
+    buscarWakatime()
+      .then((cru) => normalizarWakatime(cru))
+      .then((frescos) => { if (vivo && frescos) setDados(frescos); })
+      .catch(() => {});
+    return () => { vivo = false; };
+  }, []);
+
   const { linguagens = [], totalSegundos, mediaDiariaSegundos,
     diasComRegistro, diasTotais, inicioEm } = dados;
 
