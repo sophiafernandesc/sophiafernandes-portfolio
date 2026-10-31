@@ -4,9 +4,11 @@ import CardProjeto from '../components/CardProjeto';
 import useIdioma from '../hooks/useIdioma';
 import { getProjetos, getTags } from '../conteudo/projetos';
 import estilos from './Projetos.module.css';
+import useTitulo from '../hooks/useTitulo';
 
 export default function Projetos() {
   const { t } = useTranslation();
+  useTitulo(t('menu.projetos'));
   const idioma = useIdioma();
   const projetos = [...getProjetos(idioma)].reverse();
   const tags = getTags(idioma);

@@ -2,16 +2,18 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FiFileText, FiMail, FiGithub, FiLinkedin } from 'react-icons/fi';
 import CardProjeto from '../components/CardProjeto';
-import Cracha from '../components/Cracha';
+import Retrato from '../components/Retrato';
 import TextoDigitando from '../components/TextoDigitando';
 import GraficoLinguagens from '../components/GraficoLinguagens';
 import useIdioma from '../hooks/useIdioma';
 import { getProjetos } from '../conteudo/projetos';
 import { LINKS } from '../config/links';
 import estilos from './Home.module.css';
+import useTitulo from '../hooks/useTitulo';
 
 export default function Home() {
   const { t } = useTranslation();
+  useTitulo();
   const idioma = useIdioma();
   const projetos = getProjetos(idioma);
   const destaques = projetos.filter((p) => p.destaque).slice(0, 3);
@@ -20,7 +22,7 @@ export default function Home() {
     <>
       <section className={estilos.hero}>
         <div className={estilos.coluna}>
-          <Cracha />
+          <Retrato />
           <ol className={estilos.indice}>
             <li><a href="#wakatime"><span aria-hidden="true">01 - </span>{t('home.wakatime')}</a></li>
             <li><a href="#projetos"><span aria-hidden="true">02 - </span>{t('home.projetos')}</a></li>

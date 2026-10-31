@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FiArrowLeft, FiExternalLink } from 'react-icons/fi';
 import useIdioma from '../hooks/useIdioma';
+import useTitulo from '../hooks/useTitulo';
 import { getProjeto } from '../conteudo/projetos';
 import estilos from './ProjetoDetalhe.module.css';
 
@@ -10,6 +11,10 @@ export default function ProjetoDetalhe() {
   const { t } = useTranslation();
   const idioma = useIdioma();
   const projeto = getProjeto(slug, idioma);
+
+  // Antes do return de baixo de propósito: hook não pode vir depois de saída
+  // condicional. Slug inexistente cai no mesmo título da página de erro.
+  useTitulo(projeto?.titulo ?? t('erro.nao_encontrado'));
 
   if (!projeto) {
     return (

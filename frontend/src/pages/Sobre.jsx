@@ -7,9 +7,11 @@ import SobrePt from '../conteudo/sobre/pt.mdx';
 import SobreEn from '../conteudo/sobre/en.mdx';
 import ApresentacaoPt from '../conteudo/sobre/apresentacao-pt.mdx';
 import ApresentacaoEn from '../conteudo/sobre/apresentacao-en.mdx';
+import useTitulo from '../hooks/useTitulo';
 
 export default function Sobre() {
   const { t } = useTranslation();
+  useTitulo(t('menu.sobre'));
   const idioma = useIdioma();
   const Corpo = idioma === 'en' ? SobreEn : SobrePt;
   const Apresentacao = idioma === 'en' ? ApresentacaoEn : ApresentacaoPt;

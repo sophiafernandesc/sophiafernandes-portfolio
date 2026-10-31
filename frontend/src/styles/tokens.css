@@ -108,8 +108,8 @@
   /* Layout */
   --altura-esp32: 26rem;
   --largura-rotulo-sobre: 5rem;
-  --altura-foto-home: 20rem;
-  --diametro-foto-movel: 11rem; /* foto redonda no celular */
+  --diametro-foto-home: 20rem;  /* retrato redondo da Home */
+  --diametro-foto-movel: 11rem; /* o mesmo retrato, menor no celular */
   --alvo-toque: 2.75rem;        /* 44px: minimo da Apple HIG para o dedo */
   --altura-barra-janela: 1.5rem;   /* barra de titulo da moldura de captura */
   --diametro-ponto-janela: 0.5rem; /* cada bolinha da sinaleira */
@@ -159,7 +159,6 @@
   }
 }
 
-/* Respeita quem pediu menos animação no sistema */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

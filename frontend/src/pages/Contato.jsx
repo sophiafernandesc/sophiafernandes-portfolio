@@ -7,11 +7,13 @@ import useIdioma from '../hooks/useIdioma';
 import { useTema } from '../theme/TemaProvider';
 import { acordarApi, enviarContato } from '../services/contato';
 import estilos from './Contato.module.css';
+import useTitulo from '../hooks/useTitulo';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function Contato() {
   const { t } = useTranslation();
+  useTitulo(t('menu.contato'));
   const idioma = useIdioma();
   const { tema } = useTema();
   const [estado, setEstado] = useState('ocioso');
