@@ -9,9 +9,11 @@ import useIdioma from '../hooks/useIdioma';
 import { getProjetos } from '../conteudo/projetos';
 import { LINKS } from '../config/links';
 import estilos from './Home.module.css';
+import useTitulo from '../hooks/useTitulo';
 
 export default function Home() {
   const { t } = useTranslation();
+  useTitulo();
   const idioma = useIdioma();
   const projetos = getProjetos(idioma);
   const destaques = projetos.filter((p) => p.destaque).slice(0, 3);

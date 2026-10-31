@@ -150,5 +150,9 @@
     "abrir": "Abrir PDF",
     "pendente": "PDF atualizado em preparação.",
     "contatos": "Contatos profissionais"
+  },
+  "titulo": {
+    "marca": "Sophia Fernandes",
+    "home": "Sophia Fernandes · Engenharia de Software"
   }
 }

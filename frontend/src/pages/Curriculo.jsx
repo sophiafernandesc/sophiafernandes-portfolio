@@ -5,9 +5,11 @@ import { LINKS } from '../config/links';
 import CurriculoPt from '../conteudo/curriculo/pt.mdx';
 import CurriculoEn from '../conteudo/curriculo/en.mdx';
 import estilos from './Curriculo.module.css';
+import useTitulo from '../hooks/useTitulo';
 
 export default function Curriculo() {
   const { t } = useTranslation();
+  useTitulo(t('menu.curriculo'));
   const idioma = useIdioma();
   const Corpo = idioma === 'en' ? CurriculoEn : CurriculoPt;
   const pdf = idioma === 'en' ? LINKS.curriculoEn : LINKS.curriculo;
